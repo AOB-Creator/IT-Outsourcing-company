@@ -79,28 +79,43 @@
   "industriesItems": [
     {
       "title": "Finance & Banking",
-      "desc": "Reliable software solutions for lending, deposit and payment systems.",
+      "desc": "Workflows, audit and security — bank-grade financial systems.",
       "points": ["Credit scoring", "Payment integrations", "Security & compliance"]
     },
     {
-      "title": "Microfinance & Pawnshops",
-      "desc": "Automation of small-loan and collateral operations.",
-      "points": ["Customer database", "Collateral control", "Automated calculations"]
-    },
-    {
-      "title": "Retail & Installment (BNPL)",
-      "desc": "Digitizing installment sales for retail and wholesale trade.",
-      "points": ["POS integration", "Credit limit control", "Automated reminders"]
-    },
-    {
-      "title": "Insurance & Leasing",
-      "desc": "Systems for managing contracts, policies and payments.",
-      "points": ["Contract management", "Risk assessment", "Electronic document flow"]
+      "title": "Healthcare",
+      "desc": "Clinic and patient management — electronic medical records and LIMS.",
+      "points": ["Patient database", "Medication management", "Appointment tracking"]
     },
     {
       "title": "Education",
-      "desc": "Management and payment systems for training centers and platforms.",
-      "points": ["Student database", "Online payments", "Attendance tracking"]
+      "desc": "LMS and management systems — automate the learning process.",
+      "points": ["Student database", "Attendance tracking", "Online platforms"]
+    },
+    {
+      "title": "Retail & Trade",
+      "desc": "POS, warehouse and e-commerce — complete retail solution.",
+      "points": ["POS integration", "Warehouse management", "E-commerce platform"]
+    },
+    {
+      "title": "Warehouse & Logistics",
+      "desc": "ERP, routing and warehouse automation — supply chain management.",
+      "points": ["Warehouse management", "Route optimization", "Real-time tracking"]
+    },
+    {
+      "title": "Manufacturing",
+      "desc": "Resource and production planning — manage the production process.",
+      "points": ["Production planning", "Resource management", "Quality control"]
+    },
+    {
+      "title": "Restaurant & Food Service",
+      "desc": "Order management, kitchen and delivery — complete restaurant automation.",
+      "points": ["Order management", "Kitchen display", "Delivery management"]
+    },
+    {
+      "title": "Construction",
+      "desc": "Project and estimate management — full construction management.",
+      "points": ["Project management", "Estimate calculations", "Worker tracking"]
     }
   ],
   "portfolioItems": [

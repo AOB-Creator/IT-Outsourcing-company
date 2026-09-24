@@ -79,18 +79,33 @@
   "industriesItems": [
     {
       "title": "Finance & Banking",
-      "desc": "Workflows, audit and security — bank-grade financial systems.",
+      "desc": "Reliable software solutions for lending, deposit and payment systems.",
       "points": ["Credit scoring", "Payment integrations", "Security & compliance"]
+    },
+    {
+      "title": "Microfinance & Pawnshops",
+      "desc": "Automation of small-loan and collateral operations.",
+      "points": ["Customer database", "Collateral control", "Automated calculations"]
+    },
+    {
+      "title": "Retail & Installment (BNPL)",
+      "desc": "Digitizing installment sales for retail and wholesale trade.",
+      "points": ["POS integration", "Credit limit control", "Automated reminders"]
+    },
+    {
+      "title": "Insurance & Leasing",
+      "desc": "Systems for managing contracts, policies and payments.",
+      "points": ["Contract management", "Risk assessment", "Electronic document flow"]
+    },
+    {
+      "title": "Education",
+      "desc": "Management and payment systems for training centers and platforms.",
+      "points": ["Student database", "Online payments", "Attendance tracking"]
     },
     {
       "title": "Healthcare",
       "desc": "Clinic and patient management — electronic medical records and LIMS.",
       "points": ["Patient database", "Medication management", "Appointment tracking"]
-    },
-    {
-      "title": "Education",
-      "desc": "LMS and management systems — automate the learning process.",
-      "points": ["Student database", "Attendance tracking", "Online platforms"]
     },
     {
       "title": "Retail & Trade",

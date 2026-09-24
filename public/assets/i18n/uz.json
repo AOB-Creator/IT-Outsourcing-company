@@ -79,18 +79,33 @@
   "industriesItems": [
     {
       "title": "Moliya va bank xizmatlari",
-      "desc": "Workflow, audit va xavfsizlik — bank darajasidagi moliyaviy tizimlar.",
+      "desc": "Kredit, depozit va to'lov tizimlari uchun ishonchli dasturiy yechimlar.",
       "points": ["Kredit skoring", "To'lov integratsiyalari", "Xavfsizlik va compliance"]
+    },
+    {
+      "title": "Mikromoliya va lombard",
+      "desc": "Kichik kredit va garov operatsiyalarini avtomatlashtirish.",
+      "points": ["Mijozlar bazasi", "Garov nazorati", "Avtomatik hisob-kitob"]
+    },
+    {
+      "title": "Savdo va nasiya (BNPL)",
+      "desc": "Chakana va ulgurji savdoda nasiya sotish jarayonini raqamlashtirish.",
+      "points": ["POS integratsiya", "Kredit limiti nazorati", "Avtomatik eslatmalar"]
+    },
+    {
+      "title": "Sug'urta va lizing",
+      "desc": "Shartnoma, polis va to'lov jarayonlarini boshqarish tizimlari.",
+      "points": ["Shartnoma boshqaruvi", "Risk baholash", "Elektron hujjat aylanishi"]
+    },
+    {
+      "title": "Ta'lim",
+      "desc": "O'quv markazlari va platformalar uchun boshqaruv va to'lov tizimlari.",
+      "points": ["O'quvchilar bazasi", "Onlayn to'lovlar", "Davomat nazorati"]
     },
     {
       "title": "Tibbiyot",
       "desc": "Klinika va bemor boshqaruvi — elektron tibbiy hujjat va nomi-namunalik tizim.",
       "points": ["Bemor bazasi", "Dorilar boshqaruvi", "Qabul nazorati"]
-    },
-    {
-      "title": "Ta'lim",
-      "desc": "LMS va boshqaruv tizimlari — o'quv jarayonini avtomatlashtirish.",
-      "points": ["O'quvchilar bazasi", "Davomat nazorati", "Onlayn platformalar"]
     },
     {
       "title": "Savdo va retail",

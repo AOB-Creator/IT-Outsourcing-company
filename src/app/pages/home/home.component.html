@@ -1,11 +1,49 @@
 <!-- Hero -->
 <section class="hero">
+  <div class="hero__bg-elements">
+    <div class="hero__shape hero__shape--1"></div>
+    <div class="hero__shape hero__shape--2"></div>
+    <div class="hero__shape hero__shape--3"></div>
+  </div>
+
   <div class="container hero__inner">
-    <h1>{{ i18n.t('home.hero.title') }}</h1>
-    <p class="lead">{{ i18n.t('home.hero.subtitle') }}</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.hero.ctaPrimary') }}</a>
-      <a class="btn btn--on-dark" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
+    <div class="hero__content">
+      <h1>{{ i18n.t('home.hero.title') }}</h1>
+      <p class="lead">{{ i18n.t('home.hero.subtitle') }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.hero.ctaPrimary') }}</a>
+        <a class="btn btn--on-dark" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="visual-concept">
+        <div class="visual-icon bank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M12 1L2 6v3h20V6l-10-5zm-8 15h16M5 9v8M19 9v8M8 21h8M6 21h-2M20 21h2"></path>
+          </svg>
+        </div>
+        <span class="visual-label">{{ i18n.t('nav.services') || 'Bank' }}</span>
+      </div>
+
+      <div class="visual-concept">
+        <div class="visual-icon security">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M12 1L3 5v6c0 5.55 4.27 10.74 10 11.95 5.73-1.21 10-6.4 10-11.95V5l-9-4zm0 2.8l6 2.4v4.8c0 4.4-3 8.1-6 8.9-3-0.8-6-4.5-6-8.9v-4.8l6-2.4z"></path>
+          </svg>
+        </div>
+        <span class="visual-label">Security</span>
+      </div>
+
+      <div class="visual-concept">
+        <div class="visual-icon efficiency">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+        </div>
+        <span class="visual-label">Efficiency</span>
+      </div>
     </div>
   </div>
 </section>

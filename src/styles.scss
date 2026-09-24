@@ -4,18 +4,23 @@
 :root {
   /* Colors */
   --color-navy: #0B1F3A;
-  --color-midnight: #13294B;
-  --color-teal: #00C2A8;
-  --color-teal-hover: #00a894;
-  --color-indigo: #4F46E5;
+  --color-midnight: #0A1321;
+  --color-teal: #00D9B5;
+  --color-teal-hover: #00b89a;
+  --color-indigo: #5B5FFF;
   --color-slate-900: #0F172A;
-  --color-slate-600: #475569;
-  --color-slate-200: #E2E8F0;
-  --color-slate-50: #F8FAFC;
+  --color-slate-600: #7A8FA8;
+  --color-slate-200: #D4DFE8;
+  --color-slate-50: #F5F8FB;
   --color-white: #FFFFFF;
   --color-success: #16A34A;
   --color-warning: #F59E0B;
   --color-error: #DC2626;
+
+  /* Gradient accents */
+  --gradient-primary: linear-gradient(135deg, #5B5FFF 0%, #00D9B5 100%);
+  --gradient-dark: linear-gradient(180deg, #0A1321 0%, #0B1F3A 100%);
+  --gradient-accent: linear-gradient(135deg, #00D9B5 0%, #00a8a8 100%);
 
   /* Fonts */
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
@@ -59,7 +64,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-slate-900);
-  background: var(--color-white);
+  background: var(--color-slate-50);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -179,33 +184,47 @@ label, .label {
   font-weight: 600;
   font-size: 16px;
   line-height: 1;
-  padding: 14px 28px;
+  padding: 14px 32px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
-.btn:active { transform: translateY(1px); }
+.btn:active { transform: translateY(2px); }
 
 .btn--primary {
-  background: var(--color-teal);
+  background: linear-gradient(135deg, var(--color-indigo) 0%, var(--color-teal) 100%);
   color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(91, 95, 255, 0.3);
 }
-.btn--primary:hover { background: var(--color-teal-hover); }
+.btn--primary:hover {
+  box-shadow: 0 12px 32px rgba(91, 95, 255, 0.4);
+  transform: translateY(-2px);
+}
 
 .btn--secondary {
-  background: transparent;
+  background: var(--color-white);
   border-color: var(--color-navy);
   color: var(--color-navy);
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.08);
 }
-.btn--secondary:hover { background: rgba(11, 31, 58, 0.05); }
+.btn--secondary:hover {
+  background: var(--color-slate-50);
+  box-shadow: 0 6px 16px rgba(11, 31, 58, 0.12);
+}
 
 .btn--on-dark {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
   color: var(--color-white);
+  backdrop-filter: blur(8px);
 }
-.btn--on-dark:hover { background: rgba(255, 255, 255, 0.1); }
+.btn--on-dark:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 
 .btn--block { width: 100%; }
 
@@ -221,27 +240,29 @@ label, .label {
    ========================================================================== */
 .card {
   background: var(--color-white);
-  border: 1px solid var(--color-slate-200);
+  border: 1px solid rgba(212, 223, 232, 0.6);
   border-radius: var(--radius-md);
   padding: var(--space-6);
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .card--hover:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(91, 95, 255, 0.12), 0 8px 24px rgba(0, 217, 181, 0.08);
+  transform: translateY(-6px);
+  border-color: rgba(0, 217, 181, 0.2);
 }
 
 .tag {
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(0, 194, 168, 0.1);
-  color: #0a8577;
+  background: linear-gradient(135deg, rgba(91, 95, 255, 0.12) 0%, rgba(0, 217, 181, 0.12) 100%);
+  color: var(--color-teal);
+  border: 1px solid rgba(0, 217, 181, 0.2);
 }
 
 .stat-number {

@@ -1,0 +1,140 @@
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero__inner">
+    <h1>{{ i18n.t('home.hero.title') }}</h1>
+    <p class="lead">{{ i18n.t('home.hero.subtitle') }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.hero.ctaPrimary') }}</a>
+      <a class="btn btn--on-dark" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust line -->
+<section class="section section--muted trust">
+  <div class="container">
+    <div class="grid grid--4">
+      @for (stat of stats; track stat.label) {
+        <div class="trust__item">
+          <span class="stat-number">{{ stat.value }}</span>
+          <p>{{ stat.label }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">{{ i18n.t('nav.services') }}</span>
+      <h2>{{ i18n.t('home.servicesSection.title') }}</h2>
+      <p class="lead">{{ i18n.t('home.servicesSection.subtitle') }}</p>
+    </div>
+
+    <div class="grid grid--3">
+      @for (service of services; track service.id) {
+        <a class="card card--hover service-card" [routerLink]="navPath('services')" [fragment]="service.id">
+          <span class="service-card__icon"><app-icon [name]="service.icon" [size]="26" /></span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.solution }}</p>
+          <span class="service-card__link">
+            {{ i18n.t('home.servicesSection.detail') }}
+            <app-icon name="arrow-right" [size]="16" />
+          </span>
+        </a>
+      }
+    </div>
+
+    <div class="section-cta">
+      <a class="btn btn--secondary" [routerLink]="navPath('services')">{{ i18n.t('home.servicesSection.link') }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="section section--muted">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{{ i18n.t('home.why.title') }}</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (item of whyItems; track item.title) {
+        <div class="why-card">
+          <span class="why-card__icon"><app-icon [name]="item.icon" [size]="24" /></span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{{ i18n.t('home.process.title') }}</h2>
+    </div>
+    <div class="grid grid--4 process">
+      @for (step of processSteps; track step.num) {
+        <div class="process__step">
+          <span class="process__num">{{ step.num }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Cases teaser -->
+<section class="section section--muted">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{{ i18n.t('home.casesSection.title') }}</h2>
+    </div>
+    <div class="grid grid--3">
+      @for (item of cases; track item.industry) {
+        <div class="card card--hover case-card">
+          <span class="tag">{{ item.industry }}</span>
+          <p class="case-card__result">{{ item.result }}</p>
+          <p>{{ item.solution }}</p>
+          <ul class="case-card__tags">
+            @for (tag of item.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+    <div class="section-cta">
+      <a class="btn btn--secondary" [routerLink]="navPath('portfolio')">{{ i18n.t('home.casesSection.link') }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials placeholder -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{{ i18n.t('home.testimonials.title') }}</h2>
+    </div>
+    <div class="testimonials-empty">
+      <p>{{ i18n.t('home.testimonials.empty') }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section section--dark final-cta">
+  <div class="container final-cta__inner">
+    <h2>{{ i18n.t('home.cta.title') }}</h2>
+    <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
+      <a class="btn btn--on-dark" href="https://t.me/trustcode_partners" target="_blank" rel="noopener">{{ i18n.t('home.cta.ctaSecondary') }}</a>
+    </div>
+  </div>
+</section>

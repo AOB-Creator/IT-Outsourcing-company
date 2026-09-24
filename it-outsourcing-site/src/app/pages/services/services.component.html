@@ -1,0 +1,53 @@
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <span class="eyebrow">{{ i18n.t('nav.services') }}</span>
+    <h1>{{ i18n.t('servicesPage.title') }}</h1>
+    <p class="lead">{{ i18n.t('servicesPage.subtitle') }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="services-list">
+      @for (service of services; track service.id) {
+        <article class="service-detail card" [id]="service.id">
+          <div class="service-detail__head">
+            <span class="service-detail__icon"><app-icon [name]="service.icon" [size]="28" /></span>
+            <div>
+              <h2>{{ service.title }}</h2>
+              <span class="tag">{{ i18n.t('servicesPage.durationLabel') }}: {{ service.duration }}</span>
+            </div>
+          </div>
+
+          <div class="service-detail__grid">
+            <div>
+              <h3 class="service-detail__label">{{ i18n.t('servicesPage.problemLabel') }}</h3>
+              <p>{{ service.problem }}</p>
+            </div>
+            <div>
+              <h3 class="service-detail__label">{{ i18n.t('servicesPage.solutionLabel') }}</h3>
+              <p>{{ service.solution }}</p>
+            </div>
+          </div>
+
+          <div class="service-detail__tech">
+            <span class="service-detail__label">{{ i18n.t('servicesPage.techLabel') }}</span>
+            <ul>
+              @for (t of service.tech; track t) {
+                <li>{{ t }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark final-cta">
+  <div class="container final-cta__inner">
+    <h2>{{ i18n.t('home.cta.title') }}</h2>
+    <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
+    <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
+  </div>
+</section>

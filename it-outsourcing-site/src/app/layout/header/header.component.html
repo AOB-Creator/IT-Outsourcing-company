@@ -1,0 +1,46 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="container header__bar">
+    <a class="header__logo" [routerLink]="homePath()">
+      <span class="header__logo-mark">TC</span>
+      <span class="header__logo-text">TrustCode<em>Partners</em></span>
+    </a>
+
+    <nav class="header__nav" [class.header__nav--open]="menuOpen()">
+      <ul class="header__nav-list">
+        @for (item of navItems; track item.path) {
+          <li>
+            <a
+              [routerLink]="navPath(item.path)"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: item.path === '' }"
+            >{{ i18n.t(item.labelKey) }}</a>
+          </li>
+        }
+      </ul>
+
+      <div class="header__nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          @for (l of langs; track l) {
+            <button
+              type="button"
+              class="lang-switch__btn"
+              [class.is-active]="i18n.lang() === l"
+              (click)="switchLang(l)"
+            >{{ l.toUpperCase() }}</button>
+          }
+        </div>
+        <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('nav.cta') }}</a>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="header__toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Menu"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="24" />
+    </button>
+  </div>
+</header>

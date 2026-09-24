@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="footer__logo" [routerLink]="navPath('')">
+        <span class="footer__logo-mark">TC</span>
+        <span class="footer__logo-text">TrustCode<em>Partners</em></span>
+      </a>
+      <p>{{ i18n.t('footer.description') }}</p>
+      <span class="footer__badge">
+        <app-icon name="award" [size]="16" />
+        {{ i18n.t('footer.itpark') }}
+      </span>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ i18n.t('footer.linksTitle') }}</h4>
+      <ul>
+        @for (item of navItems; track item.path) {
+          <li><a [routerLink]="navPath(item.path)">{{ i18n.t(item.labelKey) }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ i18n.t('footer.contactTitle') }}</h4>
+      <ul class="footer__contact">
+        <li>
+          <a [href]="'tel:' + i18n.t('contact.info.phone').replaceAll(' ', '')">
+            <app-icon name="phone" [size]="16" /> {{ i18n.t('contact.info.phone') }}
+          </a>
+        </li>
+        <li>
+          <a [href]="'mailto:' + i18n.t('contact.info.email')">
+            <app-icon name="mail" [size]="16" /> {{ i18n.t('contact.info.email') }}
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/trustcode_partners" target="_blank" rel="noopener">
+            <app-icon name="telegram" [size]="16" /> {{ i18n.t('contact.info.telegram') }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ i18n.t('footer.socialTitle') }}</h4>
+      <ul class="footer__social">
+        <li><a href="https://t.me/trustcode_partners" target="_blank" rel="noopener"><app-icon name="telegram" [size]="18" /></a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener"><app-icon name="globe" [size]="18" /></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>&copy; {{ year }} TrustCode Partners. {{ i18n.t('footer.rights') }}</span>
+  </div>
+</footer>

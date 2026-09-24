@@ -1,0 +1,49 @@
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <span class="eyebrow">{{ i18n.t('nav.portfolio') }}</span>
+    <h1>{{ i18n.t('portfolioPage.title') }}</h1>
+    <p class="lead">{{ i18n.t('portfolioPage.subtitle') }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cases">
+      @for (item of items; track item.industry) {
+        <article class="card case">
+          <span class="tag">{{ item.industry }}</span>
+
+          <div class="case__body">
+            <div>
+              <h3 class="case__label">{{ i18n.t('portfolioPage.problemLabel') }}</h3>
+              <p>{{ item.problem }}</p>
+            </div>
+            <div>
+              <h3 class="case__label">{{ i18n.t('portfolioPage.solutionLabel') }}</h3>
+              <p>{{ item.solution }}</p>
+            </div>
+          </div>
+
+          <div class="case__result">
+            <h3 class="case__label">{{ i18n.t('portfolioPage.resultLabel') }}</h3>
+            <p class="case__result-value">{{ item.result }}</p>
+          </div>
+
+          <ul class="case__tags">
+            @for (tag of item.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark final-cta">
+  <div class="container final-cta__inner">
+    <h2>{{ i18n.t('home.cta.title') }}</h2>
+    <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
+    <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
+  </div>
+</section>

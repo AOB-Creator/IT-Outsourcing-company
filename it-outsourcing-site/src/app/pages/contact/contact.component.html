@@ -1,0 +1,143 @@
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <span class="eyebrow">{{ i18n.t('nav.contact') }}</span>
+    <h1>{{ i18n.t('contact.title') }}</h1>
+    <p class="lead">{{ i18n.t('contact.subtitle') }}</p>
+  </div>
+</section>
+
+<section class="section contact">
+  <div class="container contact__grid">
+    <form class="card contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <!-- honeypot -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" type="text" formControlName="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="field" [class.field--invalid]="isInvalid('name')">
+        <label for="name">{{ i18n.t('contact.form.name') }}</label>
+        <input
+          id="name"
+          class="input"
+          type="text"
+          formControlName="name"
+          [placeholder]="i18n.t('contact.form.namePlaceholder')"
+        />
+        @if (isInvalid('name')) {
+          <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+        }
+      </div>
+
+      <div class="field" [class.field--invalid]="isInvalid('company')">
+        <label for="company">{{ i18n.t('contact.form.company') }}</label>
+        <input
+          id="company"
+          class="input"
+          type="text"
+          formControlName="company"
+          [placeholder]="i18n.t('contact.form.companyPlaceholder')"
+        />
+        @if (isInvalid('company')) {
+          <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+        }
+      </div>
+
+      <div class="field-row">
+        <div class="field" [class.field--invalid]="isInvalid('industry')">
+          <label for="industry">{{ i18n.t('contact.form.industry') }}</label>
+          <select id="industry" class="select" formControlName="industry">
+            <option value="" disabled>{{ i18n.t('contact.form.industryPlaceholder') }}</option>
+            @for (option of industryOptions; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+          @if (isInvalid('industry')) {
+            <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+          }
+        </div>
+
+        <div class="field" [class.field--invalid]="isInvalid('employees')">
+          <label for="employees">{{ i18n.t('contact.form.employees') }}</label>
+          <select id="employees" class="select" formControlName="employees">
+            <option value="" disabled>{{ i18n.t('contact.form.employeesPlaceholder') }}</option>
+            @for (option of employeesOptions; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+          @if (isInvalid('employees')) {
+            <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="field" [class.field--invalid]="isInvalid('contact')">
+        <label for="contact">{{ i18n.t('contact.form.contact') }}</label>
+        <input
+          id="contact"
+          class="input"
+          type="text"
+          formControlName="contact"
+          [placeholder]="i18n.t('contact.form.contactPlaceholder')"
+        />
+        @if (isInvalid('contact')) {
+          <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+        }
+      </div>
+
+      <div class="field" [class.field--invalid]="isInvalid('message')">
+        <label for="message">{{ i18n.t('contact.form.message') }}</label>
+        <textarea
+          id="message"
+          class="textarea"
+          formControlName="message"
+          [placeholder]="i18n.t('contact.form.messagePlaceholder')"
+        ></textarea>
+        @if (isInvalid('message')) {
+          <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+        }
+      </div>
+
+      <button class="btn btn--primary btn--block" type="submit" [disabled]="status() === 'sending'">
+        {{ status() === 'sending' ? i18n.t('contact.form.sending') : i18n.t('contact.form.submit') }}
+      </button>
+
+      @if (status() === 'success') {
+        <p class="form-status form-status--success">
+          <app-icon name="check" [size]="18" /> {{ i18n.t('contact.form.success') }}
+        </p>
+      }
+      @if (status() === 'error') {
+        <p class="form-status form-status--error">{{ i18n.t('contact.form.error') }}</p>
+      }
+    </form>
+
+    <aside class="contact-info">
+      <div class="card">
+        <h3>{{ i18n.t('contact.info.title') }}</h3>
+        <ul class="contact-info__list">
+          <li>
+            <app-icon name="phone" [size]="18" />
+            <a [href]="'tel:' + i18n.t('contact.info.phone').replaceAll(' ', '')">{{ i18n.t('contact.info.phone') }}</a>
+          </li>
+          <li>
+            <app-icon name="mail" [size]="18" />
+            <a [href]="'mailto:' + i18n.t('contact.info.email')">{{ i18n.t('contact.info.email') }}</a>
+          </li>
+          <li>
+            <app-icon name="clock" [size]="18" />
+            <span>{{ i18n.t('contact.info.hours') }}</span>
+          </li>
+        </ul>
+
+        <a class="btn btn--primary btn--block telegram-btn" href="https://t.me/trustcode_partners" target="_blank" rel="noopener">
+          <app-icon name="telegram" [size]="18" /> {{ i18n.t('contact.info.telegram') }}
+        </a>
+
+        <p class="contact-info__response">
+          <app-icon name="clock" [size]="14" /> {{ i18n.t('contact.info.responseTime') }}
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="page-hero">
+  <div class="container page-hero__inner">
+    <span class="eyebrow">{{ i18n.t('nav.industries') }}</span>
+    <h1>{{ i18n.t('industriesPage.title') }}</h1>
+    <p class="lead">{{ i18n.t('industriesPage.subtitle') }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--3">
+      @for (item of industries; track item.title) {
+        <div class="card card--hover industry-card">
+          <span class="industry-card__icon"><app-icon name="check" [size]="22" /></span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+          <ul class="industry-card__points">
+            @for (point of item.points; track point) {
+              <li>
+                <app-icon name="check" [size]="14" />
+                {{ point }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark final-cta">
+  <div class="container final-cta__inner">
+    <h2>{{ i18n.t('home.cta.title') }}</h2>
+    <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
+    <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
+  </div>
+</section>

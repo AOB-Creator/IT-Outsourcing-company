@@ -1,0 +1,265 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "industries": "Yechimlar",
+    "portfolio": "Portfolio",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa",
+    "cta": "Konsultatsiya olish"
+  },
+  "meta": {
+    "siteName": "TrustCode Partners",
+    "tagline": "Bank darajasidagi ishonchlilik — biznesingiz uchun",
+    "titles": {
+      "home": "TrustCode Partners — Bank darajasidagi ishonchlilik",
+      "services": "Xizmatlar — TrustCode Partners",
+      "industries": "Yechimlar sohalari — TrustCode Partners",
+      "portfolio": "Portfolio — TrustCode Partners",
+      "about": "Biz haqimizda — TrustCode Partners",
+      "contact": "Aloqa — TrustCode Partners"
+    }
+  },
+  "servicesItems": [
+    {
+      "id": "credit-systems",
+      "icon": "layers",
+      "title": "Kredit va mikromoliya tizimlari",
+      "problem": "Qog'oz asosidagi yoki eskirgan tizimlar kredit berish jarayonini sekinlashtiradi va xatoliklarga olib keladi.",
+      "solution": "Kredit andervayting, skoring va portfel boshqaruvi uchun zamonaviy, avtomatlashtirilgan tizim yaratamiz.",
+      "tech": ["Node.js", "PostgreSQL", "Redis", "Docker"],
+      "duration": "8–14 hafta"
+    },
+    {
+      "id": "installment-trade",
+      "icon": "cart",
+      "title": "Nasiya savdo platformalari",
+      "problem": "Nasiya savdo jarayonini qo'lda boshqarish xatolik va daromad yo'qotishga sabab bo'ladi.",
+      "solution": "Onlayn va offlayn savdo nuqtalari uchun to'liq avtomatlashtirilgan BNPL/nasiya platformasi yaratamiz.",
+      "tech": ["React", "NestJS", "PostgreSQL", "To'lov API'lari"],
+      "duration": "10–16 hafta"
+    },
+    {
+      "id": "fintech-backend",
+      "icon": "shield",
+      "title": "Fintech backend yechimlari",
+      "problem": "Mavjud infratuzilma yuqori yuklama va xavfsizlik talablariga javob bermaydi.",
+      "solution": "Yuqori unumdor, xavfsiz va kengaytiriladigan backend arxitektura hamda API'lar quramiz.",
+      "tech": ["Go", "Node.js", "Kafka", "Kubernetes"],
+      "duration": "Individual"
+    },
+    {
+      "id": "kyc-compliance",
+      "icon": "check",
+      "title": "KYC va Compliance tizimlari",
+      "problem": "Mijozni identifikatsiya qilish va me'yoriy talablarga rioya qilish qo'lda bajariladi.",
+      "solution": "Avtomatlashtirilgan KYC/AML tekshiruvlari, hujjat verifikatsiyasi va audit jurnalini joriy qilamiz.",
+      "tech": ["Python", "OCR/Face API", "PostgreSQL"],
+      "duration": "6–10 hafta"
+    },
+    {
+      "id": "outstaff",
+      "icon": "users",
+      "title": "Outsourcing / Outstaff xizmatlari",
+      "problem": "Ichki jamoada bank va fintech tajribasiga ega mutaxassislar yetishmaydi.",
+      "solution": "Bank va fintech loyihalarida tajribaga ega backend/frontend dasturchilarni jamoangizga qo'shamiz.",
+      "tech": ["Moslashuvchan format", "NDA", "Sprint asosida hisobot"],
+      "duration": "1 oydan boshlab"
+    },
+    {
+      "id": "crm-erp",
+      "icon": "layers",
+      "title": "CRM/ERP platformalari",
+      "problem": "Tarqoq Excel fayllar va turli tizimlar biznes jarayonlarini nazorat qilishni qiyinlashtiradi.",
+      "solution": "Savdo, mijozlar va resurslarni boshqarish uchun moslashtirilgan CRM/ERP platforma yaratamiz.",
+      "tech": ["Angular", "NestJS", "PostgreSQL"],
+      "duration": "Individual"
+    }
+  ],
+  "industriesItems": [
+    {
+      "title": "Moliya va bank xizmatlari",
+      "desc": "Kredit, depozit va to'lov tizimlari uchun ishonchli dasturiy yechimlar.",
+      "points": ["Kredit skoring", "To'lov integratsiyalari", "Xavfsizlik va compliance"]
+    },
+    {
+      "title": "Mikromoliya va lombard",
+      "desc": "Kichik kredit va garov operatsiyalarini avtomatlashtirish.",
+      "points": ["Mijozlar bazasi", "Garov nazorati", "Avtomatik hisob-kitob"]
+    },
+    {
+      "title": "Savdo va nasiya (BNPL)",
+      "desc": "Chakana va ulgurji savdoda nasiya sotish jarayonini raqamlashtirish.",
+      "points": ["POS integratsiya", "Kredit limiti nazorati", "Avtomatik eslatmalar"]
+    },
+    {
+      "title": "Sug'urta va lizing",
+      "desc": "Shartnoma, polis va to'lov jarayonlarini boshqarish tizimlari.",
+      "points": ["Shartnoma boshqaruvi", "Risk baholash", "Elektron hujjat aylanishi"]
+    },
+    {
+      "title": "Ta'lim",
+      "desc": "O'quv markazlari va platformalar uchun boshqaruv va to'lov tizimlari.",
+      "points": ["O'quvchilar bazasi", "Onlayn to'lovlar", "Davomat nazorati"]
+    }
+  ],
+  "portfolioItems": [
+    {
+      "industry": "Mikromoliya tashkiloti",
+      "problem": "Kredit arizalarini qo'lda ko'rib chiqish jarayoni uzoq va xatoliklarga moyil edi.",
+      "solution": "Avtomatlashtirilgan kredit skoring va qaror qabul qilish tizimi ishlab chiqildi.",
+      "result": "Qarzdorlikni undirish vaqti 30% qisqardi",
+      "tags": ["Kredit skoring", "Backend", "Xavfsizlik"]
+    },
+    {
+      "industry": "Lizing kompaniyasi",
+      "problem": "Shartnomalarni rasmiylashtirish bir necha kun davom etar edi.",
+      "solution": "Elektron shartnoma va hujjat aylanish platformasi joriy qilindi.",
+      "result": "Shartnoma rasmiylashtirish vaqti 45% qisqardi",
+      "tags": ["CRM", "Elektron hujjat", "Integratsiya"]
+    },
+    {
+      "industry": "Chakana savdo tarmog'i",
+      "problem": "Nasiya savdo jarayoni turli tizimlarda tarqoq holda yuritilardi.",
+      "solution": "Yagona BNPL platforma orqali barcha savdo nuqtalari bog'landi.",
+      "result": "Konversiya 20% ga oshdi",
+      "tags": ["BNPL", "POS integratsiya", "Analitika"]
+    }
+  ],
+  "teamRoles": [
+    { "role": "Backend dasturchi", "count": "4" },
+    { "role": "Frontend dasturchi", "count": "3" },
+    { "role": "Loyiha menejeri", "count": "2" },
+    { "role": "QA muhandis", "count": "2" },
+    { "role": "DevOps muhandis", "count": "1" }
+  ],
+  "home": {
+    "hero": {
+      "title": "Bank darajasidagi ishonchlilik — biznesingiz uchun",
+      "subtitle": "Bank va fintech sohasida yillar davomida ishlagan backend/frontend dasturchilar jamoasi. Murakkab moliyaviy tizimlarni ishonchli, xavfsiz va muddatida yetkazib beramiz.",
+      "ctaPrimary": "Konsultatsiya olish",
+      "ctaSecondary": "Ishlarni ko'rish"
+    },
+    "trust": {
+      "title": "Raqamlarda tajriba",
+      "stats": [
+        { "value": "7+", "label": "yillik bank va fintech tajribasi" },
+        { "value": "25+", "label": "ishlab chiqilgan modul va tizim" },
+        { "value": "12+", "label": "muvaffaqiyatli yakunlangan loyiha" },
+        { "value": "99.9%", "label": "ishlab chiqarish muhitida barqarorlik" }
+      ]
+    },
+    "servicesSection": {
+      "title": "Xizmatlarimiz",
+      "subtitle": "Moliya va fintech sohasiga ixtisoslashgan yechimlar",
+      "link": "Barcha xizmatlar",
+      "detail": "Batafsil"
+    },
+    "why": {
+      "title": "Nega aynan biz?",
+      "items": [
+        { "icon": "shield", "title": "Bank va fintech tajribasi", "desc": "Jamoamiz yillar davomida bank va fintech loyihalarida ishlagan." },
+        { "icon": "lock", "title": "Xavfsizlikka e'tibor", "desc": "Har bir loyihada ma'lumotlar xavfsizligi va me'yoriy talablarga rioya qilinadi." },
+        { "icon": "sprint", "title": "Sprint asosida ishlash", "desc": "Shaffof jarayon, muntazam demo va aniq muddatlar." },
+        { "icon": "check", "title": "Acceptance criteria", "desc": "Har bir vazifa aniq qabul qilish mezonlari bilan belgilanadi." }
+      ]
+    },
+    "process": {
+      "title": "Ish jarayoni",
+      "steps": [
+        { "num": "01", "title": "Brifing", "desc": "Ehtiyojlaringizni tahlil qilamiz va texnik talablarni aniqlaymiz." },
+        { "num": "02", "title": "Taklif", "desc": "Muddat, narx va texnologik yechim bo'yicha aniq taklif tayyorlaymiz." },
+        { "num": "03", "title": "Dasturlash", "desc": "Sprintlar asosida ishlab chiqamiz, muntazam demo ko'rsatamiz." },
+        { "num": "04", "title": "Topshirish", "desc": "Test qilib, hujjatlashtirib, ishga tushiramiz va qo'llab-quvvatlaymiz." }
+      ]
+    },
+    "casesSection": {
+      "title": "Ishlarimizdan namunalar",
+      "link": "Barcha case'lar"
+    },
+    "testimonials": {
+      "title": "Mijozlar fikri",
+      "empty": "Tez orada bu yerda mijozlarimizning haqiqiy fikr-mulohazalari joylashtiriladi."
+    },
+    "cta": {
+      "title": "Loyihangizni muhokama qilaylik",
+      "subtitle": "Bepul konsultatsiya orqali ehtiyojlaringizni aniqlaymiz va yechim taklif qilamiz.",
+      "ctaPrimary": "Konsultatsiya olish",
+      "ctaSecondary": "Telegram orqali yozish"
+    }
+  },
+  "servicesPage": {
+    "title": "Xizmatlarimiz",
+    "subtitle": "Moliya, savdo va fintech sohasiga ixtisoslashgan dasturiy yechimlar",
+    "problemLabel": "Muammo",
+    "solutionLabel": "Yechim",
+    "techLabel": "Texnologiyalar",
+    "durationLabel": "Taxminiy muddat"
+  },
+  "industriesPage": {
+    "title": "Yechimlar sohalari",
+    "subtitle": "Har bir soha uchun moslashtirilgan dasturiy yechimlar taklif etamiz"
+  },
+  "portfolioPage": {
+    "title": "Portfolio / Case'lar",
+    "subtitle": "Maxfiylik shartlari (NDA) sabab mijozlar nomlari umumiy tavsif bilan ko'rsatilgan",
+    "problemLabel": "Muammo",
+    "solutionLabel": "Yechim",
+    "resultLabel": "Natija"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "subtitle": "Bank va fintech sohasida yillar davomida shakllangan tajriba",
+    "historyTitle": "Bizning tajribamiz",
+    "historyText": "Jamoamiz a'zolari yillar davomida yirik bank va fintech tashkilotlarida murakkab tizimlar ustida ishlagan. Endi ushbu tajribani sizning biznesingiz uchun ishlatamiz.",
+    "experienceTitle": "Tajriba yo'nalishlari",
+    "experience": ["Bank tizimlari", "Fintech mahsulotlari", "CRM/ERP platformalari", "Kredit va skoring tizimlari"],
+    "principlesTitle": "Ish tamoyillarimiz",
+    "principles": ["Shaffoflik va muntazam hisobot", "Xavfsizlikka birinchi o'rin", "Aniq muddat va acceptance criteria", "Uzoq muddatli hamkorlik"],
+    "teamTitle": "Jamoamiz",
+    "teamText": "Backend, frontend, PM, QA va DevOps mutaxassislaridan iborat kichik va tajribali jamoa.",
+    "certsTitle": "Sertifikatlar",
+    "certs": ["CCNA", "AWS Certified", "ISTQB"]
+  },
+  "contact": {
+    "title": "Aloqa",
+    "subtitle": "Loyihangiz haqida gaplashamiz — 1 soat ichida javob beramiz",
+    "form": {
+      "name": "Ismingiz",
+      "namePlaceholder": "Ism familiyangiz",
+      "company": "Kompaniya nomi",
+      "companyPlaceholder": "Kompaniyangiz nomi",
+      "industry": "Soha",
+      "industryPlaceholder": "Sohani tanlang",
+      "industryOptions": ["Mikromoliya / Lombard", "Bank", "Lizing", "Sug'urta", "Savdo", "Ta'lim", "Boshqa"],
+      "employees": "Xodimlar soni",
+      "employeesPlaceholder": "Tanlang",
+      "employeesOptions": ["1–10", "11–50", "51–200", "200+"],
+      "contact": "Telefon yoki email",
+      "contactPlaceholder": "+998 90 123 45 67",
+      "message": "Xabar",
+      "messagePlaceholder": "Loyihangiz haqida qisqacha yozing...",
+      "submit": "Yuborish",
+      "sending": "Yuborilmoqda...",
+      "success": "Rahmat! So'rovingiz qabul qilindi, tez orada bog'lanamiz.",
+      "error": "Xatolik yuz berdi, maydonlarni tekshirib qaytadan urinib ko'ring.",
+      "required": "Majburiy maydon"
+    },
+    "info": {
+      "title": "Bog'lanish ma'lumotlari",
+      "telegram": "Telegram orqali yozish",
+      "phone": "+998 90 123 45 67",
+      "email": "info@trustcode.uz",
+      "hours": "Dush–Juma, 9:00–18:00 (Toshkent vaqti)",
+      "responseTime": "1 soat ichida javob beramiz"
+    }
+  },
+  "footer": {
+    "description": "Bank va fintech sohasida tajribaga ega dasturchilar jamoasi. Ishonchli va xavfsiz dasturiy yechimlar.",
+    "linksTitle": "Tezkor havolalar",
+    "contactTitle": "Aloqa",
+    "socialTitle": "Ijtimoiy tarmoqlar",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "itpark": "IT Park rezidenti"
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "portfolio": "Portfolio",
+    "about": "About Us",
+    "contact": "Contact",
+    "cta": "Get a Consultation"
+  },
+  "meta": {
+    "siteName": "TrustCode Partners",
+    "tagline": "Bank-grade reliability — for your business",
+    "titles": {
+      "home": "TrustCode Partners — Bank-grade reliability",
+      "services": "Services — TrustCode Partners",
+      "industries": "Industries — TrustCode Partners",
+      "portfolio": "Portfolio — TrustCode Partners",
+      "about": "About Us — TrustCode Partners",
+      "contact": "Contact — TrustCode Partners"
+    }
+  },
+  "servicesItems": [
+    {
+      "id": "credit-systems",
+      "icon": "layers",
+      "title": "Credit & Microfinance Systems",
+      "problem": "Paper-based or outdated systems slow down lending and lead to errors.",
+      "solution": "We build modern, automated systems for underwriting, scoring and portfolio management.",
+      "tech": ["Node.js", "PostgreSQL", "Redis", "Docker"],
+      "duration": "8–14 weeks"
+    },
+    {
+      "id": "installment-trade",
+      "icon": "cart",
+      "title": "Installment & BNPL Trade Platforms",
+      "problem": "Manual handling of installment sales causes errors and lost revenue.",
+      "solution": "We build a fully automated BNPL/installment platform for online and offline points of sale.",
+      "tech": ["React", "NestJS", "PostgreSQL", "Payment APIs"],
+      "duration": "10–16 weeks"
+    },
+    {
+      "id": "fintech-backend",
+      "icon": "shield",
+      "title": "Fintech Backend Solutions",
+      "problem": "Existing infrastructure can't meet high-load and security requirements.",
+      "solution": "We build high-performance, secure and scalable backend architecture and APIs.",
+      "tech": ["Go", "Node.js", "Kafka", "Kubernetes"],
+      "duration": "Custom"
+    },
+    {
+      "id": "kyc-compliance",
+      "icon": "check",
+      "title": "KYC & Compliance Systems",
+      "problem": "Customer identification and regulatory compliance are handled manually.",
+      "solution": "We implement automated KYC/AML checks, document verification and audit logging.",
+      "tech": ["Python", "OCR/Face API", "PostgreSQL"],
+      "duration": "6–10 weeks"
+    },
+    {
+      "id": "outstaff",
+      "icon": "users",
+      "title": "Outsourcing / Outstaffing Services",
+      "problem": "Your in-house team lacks specialists with banking and fintech experience.",
+      "solution": "We add backend/frontend developers experienced in banking and fintech projects to your team.",
+      "tech": ["Flexible format", "NDA", "Sprint-based reporting"],
+      "duration": "From 1 month"
+    },
+    {
+      "id": "crm-erp",
+      "icon": "layers",
+      "title": "CRM/ERP Platforms",
+      "problem": "Scattered spreadsheets and disconnected systems make business processes hard to control.",
+      "solution": "We build a custom CRM/ERP platform for managing sales, customers and resources.",
+      "tech": ["Angular", "NestJS", "PostgreSQL"],
+      "duration": "Custom"
+    }
+  ],
+  "industriesItems": [
+    {
+      "title": "Finance & Banking",
+      "desc": "Reliable software solutions for lending, deposit and payment systems.",
+      "points": ["Credit scoring", "Payment integrations", "Security & compliance"]
+    },
+    {
+      "title": "Microfinance & Pawnshops",
+      "desc": "Automation of small-loan and collateral operations.",
+      "points": ["Customer database", "Collateral control", "Automated calculations"]
+    },
+    {
+      "title": "Retail & Installment (BNPL)",
+      "desc": "Digitizing installment sales for retail and wholesale trade.",
+      "points": ["POS integration", "Credit limit control", "Automated reminders"]
+    },
+    {
+      "title": "Insurance & Leasing",
+      "desc": "Systems for managing contracts, policies and payments.",
+      "points": ["Contract management", "Risk assessment", "Electronic document flow"]
+    },
+    {
+      "title": "Education",
+      "desc": "Management and payment systems for training centers and platforms.",
+      "points": ["Student database", "Online payments", "Attendance tracking"]
+    }
+  ],
+  "portfolioItems": [
+    {
+      "industry": "Microfinance Organization",
+      "problem": "Manual review of loan applications was slow and error-prone.",
+      "solution": "Built an automated credit scoring and decision-making system.",
+      "result": "Debt collection time reduced by 30%",
+      "tags": ["Credit scoring", "Backend", "Security"]
+    },
+    {
+      "industry": "Leasing Company",
+      "problem": "Contract paperwork took several days to complete.",
+      "solution": "Implemented an e-contract and document workflow platform.",
+      "result": "Contract processing time reduced by 45%",
+      "tags": ["CRM", "E-document", "Integration"]
+    },
+    {
+      "industry": "Retail Chain",
+      "problem": "Installment sales were managed across disconnected systems.",
+      "solution": "Unified all points of sale under a single BNPL platform.",
+      "result": "Conversion increased by 20%",
+      "tags": ["BNPL", "POS integration", "Analytics"]
+    }
+  ],
+  "teamRoles": [
+    { "role": "Backend Developer", "count": "4" },
+    { "role": "Frontend Developer", "count": "3" },
+    { "role": "Project Manager", "count": "2" },
+    { "role": "QA Engineer", "count": "2" },
+    { "role": "DevOps Engineer", "count": "1" }
+  ],
+  "home": {
+    "hero": {
+      "title": "Bank-grade reliability — for your business",
+      "subtitle": "A team of backend/frontend developers with years of experience in banking and fintech. We deliver complex financial systems reliably, securely and on time.",
+      "ctaPrimary": "Get a Consultation",
+      "ctaSecondary": "View Our Work"
+    },
+    "trust": {
+      "title": "Experience by the numbers",
+      "stats": [
+        { "value": "7+", "label": "years of banking & fintech experience" },
+        { "value": "25+", "label": "modules and systems delivered" },
+        { "value": "12+", "label": "successfully completed projects" },
+        { "value": "99.9%", "label": "production uptime" }
+      ]
+    },
+    "servicesSection": {
+      "title": "Our Services",
+      "subtitle": "Solutions specialized for finance and fintech",
+      "link": "All services",
+      "detail": "Learn more"
+    },
+    "why": {
+      "title": "Why choose us?",
+      "items": [
+        { "icon": "shield", "title": "Banking & fintech experience", "desc": "Our team has worked on banking and fintech projects for years." },
+        { "icon": "lock", "title": "Security-first mindset", "desc": "Every project follows data security and regulatory requirements." },
+        { "icon": "sprint", "title": "Sprint-based delivery", "desc": "Transparent process, regular demos and clear deadlines." },
+        { "icon": "check", "title": "Acceptance criteria", "desc": "Every task has clearly defined acceptance criteria." }
+      ]
+    },
+    "process": {
+      "title": "How We Work",
+      "steps": [
+        { "num": "01", "title": "Briefing", "desc": "We analyze your needs and define technical requirements." },
+        { "num": "02", "title": "Proposal", "desc": "We prepare a precise proposal covering timeline, cost and technical solution." },
+        { "num": "03", "title": "Development", "desc": "We build in sprints, with regular demos along the way." },
+        { "num": "04", "title": "Delivery", "desc": "We test, document, launch and support the product." }
+      ]
+    },
+    "casesSection": {
+      "title": "Examples of Our Work",
+      "link": "All case studies"
+    },
+    "testimonials": {
+      "title": "Client Feedback",
+      "empty": "Real client testimonials will be added here soon."
+    },
+    "cta": {
+      "title": "Let's discuss your project",
+      "subtitle": "In a free consultation we'll clarify your needs and propose a solution.",
+      "ctaPrimary": "Get a Consultation",
+      "ctaSecondary": "Message us on Telegram"
+    }
+  },
+  "servicesPage": {
+    "title": "Our Services",
+    "subtitle": "Software solutions specialized for finance, trade and fintech",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "techLabel": "Technologies",
+    "durationLabel": "Estimated timeline"
+  },
+  "industriesPage": {
+    "title": "Industries We Serve",
+    "subtitle": "We offer solutions tailored to each industry"
+  },
+  "portfolioPage": {
+    "title": "Portfolio / Case Studies",
+    "subtitle": "Due to NDA terms, client names are described in general terms",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "resultLabel": "Result"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Years of experience built in banking and fintech",
+    "historyTitle": "Our Experience",
+    "historyText": "Our team members have spent years working on complex systems at major banking and fintech organizations. Now we bring that experience to your business.",
+    "experienceTitle": "Areas of Expertise",
+    "experience": ["Banking systems", "Fintech products", "CRM/ERP platforms", "Credit & scoring systems"],
+    "principlesTitle": "Our Working Principles",
+    "principles": ["Transparency and regular reporting", "Security as a top priority", "Clear timelines and acceptance criteria", "Long-term partnership"],
+    "teamTitle": "Our Team",
+    "teamText": "A small, experienced team of backend, frontend, PM, QA and DevOps specialists.",
+    "certsTitle": "Certifications",
+    "certs": ["CCNA", "AWS Certified", "ISTQB"]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your project — we respond within 1 hour",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "First and last name",
+      "company": "Company Name",
+      "companyPlaceholder": "Your company name",
+      "industry": "Industry",
+      "industryPlaceholder": "Select industry",
+      "industryOptions": ["Microfinance / Pawnshop", "Bank", "Leasing", "Insurance", "Retail", "Education", "Other"],
+      "employees": "Number of Employees",
+      "employeesPlaceholder": "Select",
+      "employeesOptions": ["1–10", "11–50", "51–200", "200+"],
+      "contact": "Phone or email",
+      "contactPlaceholder": "+998 90 123 45 67",
+      "message": "Message",
+      "messagePlaceholder": "Briefly describe your project...",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Thank you! Your request has been received, we'll get back to you shortly.",
+      "error": "Something went wrong, please check the fields and try again.",
+      "required": "Required field"
+    },
+    "info": {
+      "title": "Contact Information",
+      "telegram": "Message us on Telegram",
+      "phone": "+998 90 123 45 67",
+      "email": "info@trustcode.uz",
+      "hours": "Mon–Fri, 9:00–18:00 (Tashkent time)",
+      "responseTime": "We respond within 1 hour"
+    }
+  },
+  "footer": {
+    "description": "A team of developers with banking and fintech experience. Reliable and secure software solutions.",
+    "linksTitle": "Quick Links",
+    "contactTitle": "Contact",
+    "socialTitle": "Social Media",
+    "rights": "All rights reserved.",
+    "itpark": "IT Park Resident"
+  }
+}

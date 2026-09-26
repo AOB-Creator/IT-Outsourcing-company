@@ -18,11 +18,11 @@
           <ul class="contact-info__list">
             <li>
               <span class="icon-box"><app-icon name="phone" [size]="18" /></span>
-              <a [href]="'tel:' + i18n.t('contact.info.phone').replaceAll(' ', '')">{{ i18n.t('contact.info.phone') }}</a>
+              <a [href]="info.phoneHref">{{ info.phoneDisplay }}</a>
             </li>
             <li>
               <span class="icon-box"><app-icon name="mail" [size]="18" /></span>
-              <a [href]="'mailto:' + i18n.t('contact.info.email')">{{ i18n.t('contact.info.email') }}</a>
+              <a [href]="'mailto:' + info.email">{{ info.email }}</a>
             </li>
             <li>
               <span class="icon-box"><app-icon name="clock" [size]="18" /></span>
@@ -30,7 +30,7 @@
             </li>
           </ul>
 
-          <a class="btn btn--ghost btn--lg telegram-btn" href="https://t.me/trustcode_partners" target="_blank" rel="noopener">
+          <a class="btn btn--ghost btn--lg telegram-btn" [href]="info.telegramUrl" target="_blank" rel="noopener">
             <app-icon name="telegram" [size]="18" /> {{ i18n.t('contact.info.telegram') }}
           </a>
 
@@ -104,15 +104,9 @@
 
       <div class="form-field" [class.form-field--invalid]="isInvalid('contact')">
         <label for="contact">{{ i18n.t('contact.form.contact') }}</label>
-        <input
-          id="contact"
-          class="field"
-          type="text"
-          formControlName="contact"
-          [placeholder]="i18n.t('contact.form.contactPlaceholder')"
-        />
+        <app-phone-field inputId="contact" formControlName="contact" [class.is-invalid]="isInvalid('contact')" />
         @if (isInvalid('contact')) {
-          <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+          <span class="field-error">{{ i18n.t(form.controls.contact.hasError('phone') ? 'modal.phoneInvalid' : 'contact.form.required') }}</span>
         }
       </div>
 

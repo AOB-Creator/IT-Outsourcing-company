@@ -25,17 +25,17 @@
       <h4>{{ i18n.t('footer.contactTitle') }}</h4>
       <ul class="footer__contact">
         <li>
-          <a [href]="'tel:' + i18n.t('contact.info.phone').replaceAll(' ', '')">
-            <app-icon name="phone" [size]="16" /> {{ i18n.t('contact.info.phone') }}
+          <a [href]="info.phoneHref">
+            <app-icon name="phone" [size]="16" /> {{ info.phoneDisplay }}
           </a>
         </li>
         <li>
-          <a [href]="'mailto:' + i18n.t('contact.info.email')">
-            <app-icon name="mail" [size]="16" /> {{ i18n.t('contact.info.email') }}
+          <a [href]="'mailto:' + info.email">
+            <app-icon name="mail" [size]="16" /> {{ info.email }}
           </a>
         </li>
         <li>
-          <a href="https://t.me/trustcode_partners" target="_blank" rel="noopener">
+          <a [href]="info.telegramUrl" target="_blank" rel="noopener">
             <app-icon name="telegram" [size]="16" /> {{ i18n.t('contact.info.telegram') }}
           </a>
         </li>
@@ -45,8 +45,8 @@
     <div class="footer__col">
       <h4>{{ i18n.t('footer.socialTitle') }}</h4>
       <ul class="footer__social">
-        <li><a href="https://t.me/trustcode_partners" target="_blank" rel="noopener"><app-icon name="telegram" [size]="18" /></a></li>
-        <li><a href="https://linkedin.com" target="_blank" rel="noopener"><app-icon name="globe" [size]="18" /></a></li>
+        <li><a [href]="info.telegramUrl" target="_blank" rel="noopener" aria-label="Telegram"><app-icon name="telegram" [size]="18" /></a></li>
+        <li><a [href]="info.phoneHref" aria-label="Phone"><app-icon name="phone" [size]="18" /></a></li>
       </ul>
     </div>
   </div>

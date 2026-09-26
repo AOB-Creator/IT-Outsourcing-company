@@ -4,12 +4,14 @@ import { firstValueFrom } from 'rxjs';
 
 export interface ContactPayload {
   name: string;
-  company: string;
-  industry: string;
-  employees: string;
   contact: string;
-  message: string;
+  company?: string;
+  position?: string;
+  industry?: string;
+  employees?: string;
+  message?: string;
   lang: string;
+  source: 'modal' | 'contact';
 }
 
 // The Telegram bot token lives only in the /api/contact serverless function.

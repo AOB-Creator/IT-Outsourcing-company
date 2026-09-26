@@ -47,6 +47,6 @@
   <div class="container final-cta__inner">
     <h2>{{ i18n.t('home.cta.title') }}</h2>
     <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
-    <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
+    <button type="button" class="btn btn--primary btn--lg" (click)="consult.open()">{{ i18n.t('home.cta.ctaPrimary') }}</button>
   </div>
 </section>

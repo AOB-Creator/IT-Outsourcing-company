@@ -4,6 +4,8 @@ import { TranslateService } from '../../core/i18n/translate.service';
 import { SeoService } from '../../core/seo.service';
 import { IconComponent, IconName } from '../../shared/icon/icon.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { ConsultModalService } from '../../core/consult-modal.service';
+import { CONTACT } from '../../core/contact-info';
 
 interface ServiceItem {
   id: string;
@@ -50,6 +52,8 @@ interface PortfolioItem {
 })
 export class HomeComponent {
   readonly i18n = inject(TranslateService);
+  readonly consult = inject(ConsultModalService);
+  readonly info = CONTACT;
   private seo = inject(SeoService);
 
   constructor() {

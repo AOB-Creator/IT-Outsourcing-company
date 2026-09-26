@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/ro
 import { filter } from 'rxjs';
 import { Lang, SUPPORTED_LANGS, TranslateService } from '../../core/i18n/translate.service';
 import { IconComponent } from '../../shared/icon/icon.component';
+import { ConsultModalService } from '../../core/consult-modal.service';
 
 interface NavItem {
   path: string;
@@ -20,6 +21,7 @@ interface NavItem {
 export class HeaderComponent {
   private router = inject(Router);
   readonly i18n = inject(TranslateService);
+  private consult = inject(ConsultModalService);
 
   readonly langs = SUPPORTED_LANGS;
   readonly menuOpen = signal(false);
@@ -43,6 +45,11 @@ export class HeaderComponent {
   @HostListener('window:scroll')
   onScroll(): void {
     this.scrolled.set(window.scrollY > 8);
+  }
+
+  openConsult(): void {
+    this.menuOpen.set(false);
+    this.consult.open();
   }
 
   toggleMenu(): void {

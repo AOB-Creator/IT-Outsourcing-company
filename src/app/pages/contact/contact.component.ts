@@ -4,6 +4,8 @@ import { TranslateService } from '../../core/i18n/translate.service';
 import { SeoService } from '../../core/seo.service';
 import { ContactService } from '../../core/contact.service';
 import { IconComponent } from '../../shared/icon/icon.component';
+import { PhoneFieldComponent, uzPhoneValidator } from '../../shared/phone-field/phone-field.component';
+import { CONTACT } from '../../core/contact-info';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -11,7 +13,7 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
   selector: 'app-contact',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ReactiveFormsModule, IconComponent],
+  imports: [ReactiveFormsModule, IconComponent, PhoneFieldComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -21,6 +23,7 @@ export class ContactComponent {
   private fb = inject(FormBuilder);
   private contactService = inject(ContactService);
 
+  readonly info = CONTACT;
   readonly status = signal<Status>('idle');
 
   readonly form = this.fb.nonNullable.group({
@@ -28,7 +31,7 @@ export class ContactComponent {
     company: ['', Validators.required],
     industry: ['', Validators.required],
     employees: ['', Validators.required],
-    contact: ['', Validators.required],
+    contact: ['', [Validators.required, uzPhoneValidator]],
     message: ['', [Validators.required, Validators.minLength(10)]],
     // honeypot: real visitors never see or fill this field
     website: [''],
@@ -67,7 +70,7 @@ export class ContactComponent {
     this.status.set('sending');
     try {
       const { website: _website, ...payload } = this.form.getRawValue();
-      await this.contactService.submit({ ...payload, lang: this.i18n.lang() });
+      await this.contactService.submit({ ...payload, lang: this.i18n.lang(), source: 'contact' });
       this.status.set('success');
       this.form.reset();
     } catch {

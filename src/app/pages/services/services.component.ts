@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TranslateService } from '../../core/i18n/translate.service';
+import { ConsultModalService } from '../../core/consult-modal.service';
 import { SeoService } from '../../core/seo.service';
 import { IconComponent, IconName } from '../../shared/icon/icon.component';
 
@@ -18,12 +18,13 @@ interface ServiceItem {
   selector: 'app-services',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent],
+  imports: [IconComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss',
 })
 export class ServicesComponent {
   readonly i18n = inject(TranslateService);
+  readonly consult = inject(ConsultModalService);
   private seo = inject(SeoService);
 
   constructor() {
@@ -32,9 +33,5 @@ export class ServicesComponent {
 
   get services(): ServiceItem[] {
     return this.i18n.list<ServiceItem>('servicesItems');
-  }
-
-  navPath(path: string): string[] {
-    return path ? ['/', this.i18n.lang(), path] : ['/', this.i18n.lang()];
   }
 }

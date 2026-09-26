@@ -29,7 +29,7 @@
             >{{ l.toUpperCase() }}</button>
           }
         </div>
-        <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('nav.cta') }}</a>
+        <button type="button" class="btn btn--primary" (click)="openConsult()">{{ i18n.t('nav.cta') }}</button>
       </div>
     </nav>
 

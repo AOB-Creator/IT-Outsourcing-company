@@ -1,11 +1,15 @@
-const FIELDS = {
-  name: 120,
-  company: 160,
-  industry: 80,
-  employees: 40,
-  contact: 160,
-  message: 3000,
-};
+// [field, max length, required, label in the Telegram message]
+const FIELDS = [
+  ['name', 120, true, 'Ism'],
+  ['contact', 160, true, 'Aloqa'],
+  ['company', 160, false, 'Kompaniya'],
+  ['position', 120, false, 'Lavozim'],
+  ['industry', 80, false, 'Soha'],
+  ['employees', 40, false, 'Xodimlar'],
+  ['message', 3000, false, 'Xabar'],
+];
+
+const SOURCES = { modal: 'Konsultatsiya oynasi', contact: 'Aloqa sahifasi' };
 
 const escapeHtml = (value) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -36,25 +40,24 @@ export async function POST(request) {
   if (typeof body.website === 'string' && body.website.trim()) return json({ ok: true });
 
   const data = {};
-  for (const [field, max] of Object.entries(FIELDS)) {
+  for (const [field, max, required] of FIELDS) {
     const value = typeof body[field] === 'string' ? body[field].trim() : '';
-    if (!value || value.length > max) return json({ ok: false, error: `invalid_${field}` }, 400);
-    data[field] = escapeHtml(value);
+    if ((required && !value) || value.length > max) return json({ ok: false, error: `invalid_${field}` }, 400);
+    if (value) data[field] = escapeHtml(value);
   }
   const lang = ['uz', 'ru', 'en'].includes(body.lang) ? body.lang.toUpperCase() : '—';
+  const source = SOURCES[body.source] ?? 'Sayt';
 
+  const lines = FIELDS.filter(([field]) => field !== 'message' && data[field]).map(
+    ([field, , , label]) => `<b>${label}:</b> ${data[field]}`,
+  );
   const text = [
     '<b>🆕 Yangi ariza — TrustCode</b>',
     '',
-    `<b>Ism:</b> ${data.name}`,
-    `<b>Kompaniya:</b> ${data.company}`,
-    `<b>Soha:</b> ${data.industry}`,
-    `<b>Xodimlar:</b> ${data.employees}`,
-    `<b>Aloqa:</b> ${data.contact}`,
+    ...lines,
+    ...(data.message ? ['', `<b>Xabar:</b>\n${data.message}`] : []),
     '',
-    `<b>Xabar:</b>\n${data.message}`,
-    '',
-    `<i>Til: ${lang} · ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent' })}</i>`,
+    `<i>${source} · Til: ${lang} · ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent' })}</i>`,
   ].join('\n');
 
   const send = (targetChat) =>

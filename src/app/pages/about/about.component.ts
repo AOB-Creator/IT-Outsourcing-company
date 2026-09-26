@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TranslateService } from '../../core/i18n/translate.service';
+import { ConsultModalService } from '../../core/consult-modal.service';
 import { SeoService } from '../../core/seo.service';
 import { IconComponent } from '../../shared/icon/icon.component';
 
@@ -13,12 +13,13 @@ interface TeamRole {
   selector: 'app-about',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent],
+  imports: [IconComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
   readonly i18n = inject(TranslateService);
+  readonly consult = inject(ConsultModalService);
   private seo = inject(SeoService);
 
   constructor() {
@@ -39,9 +40,5 @@ export class AboutComponent {
 
   get team(): TeamRole[] {
     return this.i18n.list<TeamRole>('teamRoles');
-  }
-
-  navPath(path: string): string[] {
-    return path ? ['/', this.i18n.lang(), path] : ['/', this.i18n.lang()];
   }
 }

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateService } from '../../core/i18n/translate.service';
 import { IconComponent } from '../../shared/icon/icon.component';
+import { CONTACT } from '../../core/contact-info';
 
 interface NavItem {
   path: string;
@@ -17,6 +18,7 @@ interface NavItem {
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+  readonly info = CONTACT;
   readonly i18n = inject(TranslateService);
   readonly year = new Date().getFullYear();
 

@@ -1,0 +1,115 @@
+@if (modal.isOpen()) {
+  <div class="overlay" (click)="modal.close()">
+    <div
+      class="bezel dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consult-title"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="bezel__core dialog__core">
+        <button type="button" class="dialog__close" (click)="modal.close()" [attr.aria-label]="i18n.t('modal.close')">
+          <app-icon name="close" [size]="18" />
+        </button>
+
+        <header class="dialog__head">
+          <span class="eyebrow">{{ i18n.t('modal.eyebrow') }}</span>
+          <h2 id="consult-title">{{ i18n.t('modal.title') }} <span aria-hidden="true">👋</span></h2>
+          <p>{{ i18n.t('modal.text') }}</p>
+        </header>
+
+        <div class="dialog__body">
+          <aside class="direct">
+            <div class="direct__qr">
+              <img src="assets/qr-telegram.svg" width="148" height="148" alt="Telegram QR" />
+              <span>{{ i18n.t('modal.qrHint') }}</span>
+            </div>
+            <a class="btn btn--primary btn--block" [href]="info.telegramUrl" target="_blank" rel="noopener">
+              <app-icon name="telegram" [size]="16" /> {{ i18n.t('modal.telegram') }}
+            </a>
+            <a class="btn btn--ghost btn--block" [href]="info.phoneHref">
+              <app-icon name="phone" [size]="16" /> {{ i18n.t('modal.call') }}
+            </a>
+            <span class="direct__phone">{{ info.phoneDisplay }}</span>
+          </aside>
+
+          @if (status() === 'success') {
+            <div class="done">
+              <span class="done__icon"><app-icon name="check" [size]="28" /></span>
+              <h3>{{ i18n.t('modal.successTitle') }}</h3>
+              <p>{{ i18n.t('modal.successText') }}</p>
+              <button type="button" class="btn btn--ghost" (click)="modal.close()">{{ i18n.t('modal.close') }}</button>
+            </div>
+          } @else {
+            <form class="quick" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+              <span class="quick__divider">{{ i18n.t('modal.divider') }}</span>
+
+              <div class="hp-field" aria-hidden="true">
+                <input type="text" formControlName="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="quick__field">
+                <input
+                  #nameInput
+                  class="field"
+                  [class.is-invalid]="isInvalid('name')"
+                  type="text"
+                  formControlName="name"
+                  autocomplete="name"
+                  [placeholder]="i18n.t('modal.name')"
+                  [attr.aria-label]="i18n.t('modal.name')"
+                />
+                @if (isInvalid('name')) {
+                  <span class="field-error">{{ i18n.t('contact.form.required') }}</span>
+                }
+              </div>
+
+              <div class="quick__field">
+                <app-phone-field formControlName="contact" [class.is-invalid]="isInvalid('contact')" />
+                @if (isInvalid('contact')) {
+                  <span class="field-error">
+                    {{ i18n.t(form.controls.contact.hasError('phone') ? 'modal.phoneInvalid' : 'contact.form.required') }}
+                  </span>
+                }
+              </div>
+
+              <div class="quick__row">
+                <select class="field field--select" formControlName="industry" [attr.aria-label]="i18n.t('modal.industry')">
+                  <option value="">{{ i18n.t('modal.industry') }}</option>
+                  @for (option of industryOptions; track option) {
+                    <option [value]="option">{{ option }}</option>
+                  }
+                </select>
+                <select class="field field--select" formControlName="employees" [attr.aria-label]="i18n.t('modal.employees')">
+                  <option value="">{{ i18n.t('modal.employees') }}</option>
+                  @for (option of employeesOptions; track option) {
+                    <option [value]="option">{{ option }}</option>
+                  }
+                </select>
+              </div>
+
+              <input
+                class="field"
+                type="text"
+                formControlName="position"
+                autocomplete="organization-title"
+                [placeholder]="i18n.t('modal.position')"
+                [attr.aria-label]="i18n.t('modal.position')"
+              />
+
+              <button class="btn btn--primary btn--lg btn--block" type="submit" [disabled]="status() === 'sending'">
+                {{ status() === 'sending' ? i18n.t('modal.sending') : i18n.t('modal.submit') }}
+                <span class="btn__icon"><app-icon name="arrow-right" [size]="16" /></span>
+              </button>
+
+              @if (status() === 'error') {
+                <p class="quick__error">{{ i18n.t('modal.error') }}</p>
+              }
+              <p class="form-note">{{ i18n.t('modal.note') }}</p>
+            </form>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

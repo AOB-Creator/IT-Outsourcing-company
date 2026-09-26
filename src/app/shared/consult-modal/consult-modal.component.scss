@@ -84,10 +84,9 @@
 
   @media (max-width: 720px) {
     order: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     .direct__qr { display: none; }
-    .direct__phone { grid-column: 1 / -1; text-align: center; }
+    .btn { justify-content: center; text-align: center; white-space: nowrap; }
+    .direct__phone { text-align: center; }
   }
 }
 

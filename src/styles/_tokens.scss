@@ -40,7 +40,9 @@
   --fs-h4:   1.125rem;                       // 18px (kichik karta)
   --fs-lead: 1.05rem;                        // 16.8px hero paragraf
   --fs-body: 0.95rem;
+  --fs-lg:   1.1rem;                         // 17.6px dashboard value
   --fs-sm:   0.82rem;                        // tugma, nav
+  --fs-xs:   0.65rem;                        // dashboard label
   --fs-eyebrow: 0.7rem;                      // 11.2px mono
 
   --lh-tight: 0.98;   // h1
@@ -64,6 +66,13 @@
   --gutter: clamp(16px, 4vw, 32px);
   --section-y: clamp(72px, 9vw, 128px);
   --header-h: 58px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
 
   /* ---------- Effects ---------- */
   --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);

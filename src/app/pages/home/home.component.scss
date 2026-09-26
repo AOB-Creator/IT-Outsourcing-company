@@ -161,6 +161,76 @@
   text-transform: uppercase;
 }
 
+.hero__dashboard {
+  height: 100%;
+  min-height: 400px;
+  box-shadow: var(--shadow-glow);
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8);
+}
+
+.dashboard__header {
+  display: flex;
+  gap: var(--space-4);
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--fs-eyebrow);
+    font-weight: 700;
+    color: var(--fg);
+    background: rgba(79, 125, 255, 0.15);
+    border: 1px solid rgba(79, 125, 255, 0.2);
+    border-radius: var(--r-pill);
+    letter-spacing: 0.05em;
+    height: auto;
+    padding-block: var(--space-2);
+
+    &.chip--success {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+  }
+}
+
+.dashboard__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dashboard__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: rgba(79, 125, 255, 0.05);
+  border: 1px solid rgba(79, 125, 255, 0.1);
+  border-radius: var(--r-sm);
+}
+
+.dashboard__label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--fg-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dashboard__value {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-display);
+}
+
 .hero h1 {
   color: var(--fg);
   font-size: var(--fs-h1);
@@ -181,6 +251,37 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
+  margin-bottom: var(--space-12);
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: var(--space-12);
+}
+
+.hero__stat {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--fg-2);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .trust {

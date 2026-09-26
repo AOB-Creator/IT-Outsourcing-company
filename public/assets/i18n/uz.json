@@ -165,10 +165,14 @@
   ],
   "home": {
     "hero": {
+      "eyebrow": "Moliya va Fintech · Toshkent",
       "title": "Bank darajasidagi ishonchlilik — biznesingiz uchun",
       "subtitle": "Bank va fintech sohasida yillar davomida ishlagan backend/frontend dasturchilar jamoasi. Murakkab moliyaviy tizimlarni ishonchli, xavfsiz va muddatida yetkazib beramiz.",
       "ctaPrimary": "Konsultatsiya olish",
-      "ctaSecondary": "Ishlarni ko'rish"
+      "ctaSecondary": "Ishlarni ko'rish",
+      "stat1Label": "8 Dasturchi",
+      "stat2Label": "4 Senior",
+      "stat3Label": "Java/Angular"
     },
     "trust": {
       "title": "Raqamlarda tajriba",

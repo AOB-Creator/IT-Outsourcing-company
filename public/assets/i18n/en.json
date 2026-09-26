@@ -165,10 +165,14 @@
   ],
   "home": {
     "hero": {
+      "eyebrow": "Finance & Fintech · Tashkent",
       "title": "Bank-grade reliability — for your business",
       "subtitle": "A team of backend/frontend developers with years of experience in banking and fintech. We deliver complex financial systems reliably, securely and on time.",
       "ctaPrimary": "Get a Consultation",
-      "ctaSecondary": "View Our Work"
+      "ctaSecondary": "View Our Work",
+      "stat1Label": "8 Developers",
+      "stat2Label": "4 Seniors",
+      "stat3Label": "Java/Angular"
     },
     "trust": {
       "title": "Experience by the numbers",

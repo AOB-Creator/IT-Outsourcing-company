@@ -8,41 +8,52 @@
 
   <div class="container hero__inner">
     <div class="hero__content">
+      <span class="eyebrow">{{ i18n.t('home.hero.eyebrow') || 'Engineering Excellence' }}</span>
       <h1>{{ i18n.t('home.hero.title') }}</h1>
       <p class="lead">{{ i18n.t('home.hero.subtitle') }}</p>
       <div class="hero__actions">
         <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.hero.ctaPrimary') }}</a>
         <a class="btn btn--on-dark" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
       </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="stat-label">{{ i18n.t('home.hero.stat1Label') || '8 Developers' }}</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="stat-label">{{ i18n.t('home.hero.stat2Label') || '4 Seniors' }}</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="stat-label">{{ i18n.t('home.hero.stat3Label') || 'Java/Angular' }}</span>
+        </div>
+      </div>
     </div>
 
     <div class="hero__visual">
-      <div class="visual-concept">
-        <div class="visual-icon bank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <path d="M12 1L2 6v3h20V6l-10-5zm-8 15h16M5 9v8M19 9v8M8 21h8M6 21h-2M20 21h2"></path>
-          </svg>
+      <div class="bezel hero__dashboard">
+        <div class="bezel__core">
+          <div class="dashboard">
+            <div class="dashboard__header">
+              <span class="chip">SYSTEM</span>
+              <span class="chip chip--success">LIVE</span>
+            </div>
+            <div class="dashboard__content">
+              <div class="dashboard__item">
+                <span class="dashboard__label">Performance</span>
+                <span class="dashboard__value">98%</span>
+              </div>
+              <div class="dashboard__item">
+                <span class="dashboard__label">Uptime</span>
+                <span class="dashboard__value">99.9%</span>
+              </div>
+              <div class="dashboard__item">
+                <span class="dashboard__label">Response</span>
+                <span class="dashboard__value">&lt;100ms</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <span class="visual-label">{{ i18n.t('nav.services') || 'Bank' }}</span>
-      </div>
-
-      <div class="visual-concept">
-        <div class="visual-icon security">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <path d="M12 1L3 5v6c0 5.55 4.27 10.74 10 11.95 5.73-1.21 10-6.4 10-11.95V5l-9-4zm0 2.8l6 2.4v4.8c0 4.4-3 8.1-6 8.9-3-0.8-6-4.5-6-8.9v-4.8l6-2.4z"></path>
-          </svg>
-        </div>
-        <span class="visual-label">Security</span>
-      </div>
-
-      <div class="visual-concept">
-        <div class="visual-icon efficiency">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 6v6l4 2"></path>
-          </svg>
-        </div>
-        <span class="visual-label">Efficiency</span>
       </div>
     </div>
   </div>

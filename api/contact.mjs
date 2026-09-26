@@ -53,17 +53,29 @@ export async function POST(request) {
     `<i>Til: ${lang} · ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent' })}</i>`,
   ].join('\n');
 
-  const tg = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
-  }).catch((err) => {
-    console.error('[contact] Telegram request failed', err);
-    return null;
-  });
+  const send = (targetChat) =>
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: targetChat, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+    })
+      .then(async (res) => ({ ok: res.ok, status: res.status, body: await res.json().catch(() => ({})) }))
+      .catch((err) => {
+        console.error('[contact] Telegram request failed', err);
+        return null;
+      });
+
+  let tg = await send(chatId);
+
+  // A basic group gets a new id when Telegram upgrades it to a supergroup.
+  const migratedTo = tg?.body?.parameters?.migrate_to_chat_id;
+  if (tg && !tg.ok && migratedTo) {
+    console.error(`[contact] Chat ${chatId} became a supergroup; update TELEGRAM_CHAT_ID to ${migratedTo}`);
+    tg = await send(migratedTo);
+  }
 
   if (!tg || !tg.ok) {
-    if (tg) console.error('[contact] Telegram error', tg.status, await tg.text());
+    if (tg) console.error('[contact] Telegram error', tg.status, JSON.stringify(tg.body));
     return json({ ok: false, error: 'telegram_failed' }, 502);
   }
   return json({ ok: true });

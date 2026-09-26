@@ -13,11 +13,15 @@ const escapeHtml = (value) =>
 const json = (body, status = 200) => Response.json(body, { status });
 
 export async function POST(request) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
   if (!token || !chatId) {
-    console.error('[contact] TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is not set');
-    return json({ ok: false, error: 'not_configured' }, 500);
+    // Names only, never values: tells the owner which variable this deployment can't see.
+    const missing = [!token && 'TELEGRAM_BOT_TOKEN', !chatId && 'TELEGRAM_CHAT_ID'].filter(Boolean);
+    const env = process.env.VERCEL_ENV ?? 'unknown';
+    const commit = (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 7) || 'unknown';
+    console.error(`[contact] missing ${missing.join(', ')} in ${env} deployment of ${commit}`);
+    return json({ ok: false, error: 'not_configured', missing, env, commit }, 500);
   }
 
   let body;

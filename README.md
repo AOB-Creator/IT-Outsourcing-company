@@ -34,7 +34,7 @@ A tri-lingual corporate website for an IT outsourcing company, built with Angula
 
 ## Translation Files
 
-Translation files are located in `public/assets/i18n/`:
+Translation files are located in `src/app/core/i18n/locales/` (bundled per language, so prerendered pages contain the translated text):
 - `uz.json` - Uzbek translations
 - `ru.json` - Russian translations
 - `en.json` - English translations
@@ -45,6 +45,18 @@ Each file contains hierarchical keys for:
 - Service descriptions with problem/solution/tech/duration
 - Industry benefits and features
 - Team role descriptions
+
+## SEO and prerendering
+
+`ng build` prerenders all 18 pages (`/uz`, `/ru`, `/en` × 6 pages) to static HTML in
+`dist/it-outsourcing-site/browser` (`outputMode: "static"`, routes in `src/app/app.routes.server.ts`),
+so search engines and link previews see the full page text. Each page gets its own title,
+description, canonical URL, `hreflang` alternates and Open Graph/Twitter tags (`src/app/core/seo.service.ts`).
+
+- Site origin: `src/app/core/site.ts` (`SITE_URL`)
+- `public/sitemap.xml`, `public/robots.txt`: regenerate with `node scripts/generate-seo-assets.mjs`
+- Link-preview images: `public/og/og-{uz,ru,en}.png` (1200×630); favicons in `public/`
+- `vercel.json`: `/` → `/uz` redirect, unknown paths fall back to the client app (`index.csr.html`)
 
 ## Contact form → Telegram
 

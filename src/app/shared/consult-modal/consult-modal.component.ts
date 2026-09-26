@@ -8,6 +8,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ConsultModalService } from '../../core/consult-modal.service';
 import { ContactService } from '../../core/contact.service';
@@ -31,6 +32,7 @@ export class ConsultModalComponent {
   readonly i18n = inject(TranslateService);
   private contactService = inject(ContactService);
   private fb = inject(FormBuilder);
+  private document = inject(DOCUMENT);
 
   readonly info = CONTACT;
   readonly status = signal<Status>('idle');
@@ -48,7 +50,7 @@ export class ConsultModalComponent {
   constructor() {
     effect(() => {
       const open = this.modal.isOpen();
-      document.body.style.overflow = open ? 'hidden' : '';
+      this.document.body.style.overflow = open ? 'hidden' : '';
       if (open) {
         this.status.set('idle');
         setTimeout(() => this.nameInput()?.nativeElement.focus(), 50);

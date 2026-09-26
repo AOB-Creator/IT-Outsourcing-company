@@ -1,15 +1,22 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 
 export type Lang = 'uz' | 'ru' | 'en';
 
 export const SUPPORTED_LANGS: Lang[] = ['uz', 'ru', 'en'];
 export const DEFAULT_LANG: Lang = 'uz';
 
+// Bundled per language (not fetched over HTTP) so prerendered HTML and the
+// first client render already contain the translated text.
+const LOCALES: Record<Lang, () => Promise<{ default: Record<string, unknown> }>> = {
+  uz: () => import('./locales/uz.json'),
+  ru: () => import('./locales/ru.json'),
+  en: () => import('./locales/en.json'),
+};
+
 @Injectable({ providedIn: 'root' })
 export class TranslateService {
-  private http = inject(HttpClient);
+  private document = inject(DOCUMENT);
 
   readonly lang = signal<Lang>(DEFAULT_LANG);
   readonly data = signal<Record<string, unknown>>({});
@@ -21,16 +28,11 @@ export class TranslateService {
       lang = DEFAULT_LANG;
     }
     if (!this.cache.has(lang)) {
-      const json = await firstValueFrom(
-        this.http.get<Record<string, unknown>>(`assets/i18n/${lang}.json`)
-      );
-      this.cache.set(lang, json);
+      this.cache.set(lang, (await LOCALES[lang]()).default);
     }
     this.data.set(this.cache.get(lang)!);
     this.lang.set(lang);
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = lang;
-    }
+    this.document.documentElement.lang = lang;
     try {
       localStorage.setItem('lang', lang);
     } catch {

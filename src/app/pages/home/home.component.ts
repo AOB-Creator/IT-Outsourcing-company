@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { TranslateService } from '../../core/i18n/translate.service';
 import { SeoService } from '../../core/seo.service';
 import { IconComponent, IconName } from '../../shared/icon/icon.component';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 interface ServiceItem {
   id: string;
@@ -43,7 +44,7 @@ interface PortfolioItem {
   selector: 'app-home',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent],
+  imports: [RouterLink, IconComponent, RevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

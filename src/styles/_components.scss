@@ -1,0 +1,170 @@
+// TrustCode Partners — global UI primitives
+// styles.scss ichida: @use 'styles/tokens'; @use 'styles/components';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; margin: 0; color: var(--fg); }
+h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: var(--ls-h1); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-head); letter-spacing: var(--ls-h2); }
+h3 { font-size: var(--fs-h3); line-height: 1.2; letter-spacing: -0.01em; }
+p  { margin: 0; color: var(--fg-2); }
+
+.text-accent { color: var(--accent); }        // h1 ikkinchi qatori
+.text-muted  { color: var(--fg-3); }
+
+/* ---------- Layout ---------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.section   { position: relative; padding-block: var(--section-y); }
+.section-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 48px; max-width: 640px; }
+.section-head--center { align-items: center; text-align: center; margin-inline: auto; }
+.section-cta { display: flex; justify-content: center; margin-top: 40px; }
+
+/* ---------- Eyebrow: "• IMKONIYATLAR" ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--accent-soft);
+  &::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+}
+.eyebrow--pill { padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--r-pill); background: var(--glass); }
+
+/* ---------- Buttons: pill + ↗ doira ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  height: 40px; padding: 6px 6px 6px 16px;
+  border-radius: var(--r-pill); border: 1px solid transparent;
+  font: 600 var(--fs-sm) var(--font-body); color: #fff; text-decoration: none; cursor: pointer;
+  transition: background var(--dur-fast), transform var(--dur-fast), border-color var(--dur-fast);
+  .btn__icon {
+    display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18); transition: transform var(--dur) var(--ease-out);
+  }
+  &:hover .btn__icon { transform: rotate(45deg); }
+  &:active { transform: scale(0.98); }
+  &:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; }
+}
+.btn--primary { background: var(--accent); &:hover { background: var(--accent-hover); } }
+.btn--ghost   { background: var(--glass); border-color: var(--line); .btn__icon { background: var(--surface-3); } &:hover { border-color: var(--line-strong); } }
+.btn--lg      { height: 48px; padding-left: 22px; font-size: 0.9rem; .btn__icon { width: 34px; height: 34px; } }
+.btn--block   { width: 100%; justify-content: center; }
+
+/* ---------- Bezel card (ikki qavatli ramka) ---------- */
+// <div class="bezel"><div class="bezel__core">...</div></div>
+.bezel {
+  padding: 4px; border-radius: var(--r-xl);
+  background: rgba(255, 255, 255, 0.02); border: 1px solid var(--line);
+}
+.bezel__core {
+  border-radius: var(--r-lg); background: var(--surface);
+  box-shadow: var(--shadow-inset); padding: clamp(24px, 3vw, 36px);
+}
+
+/* ---------- Oddiy karta ---------- */
+.card {
+  position: relative; border-radius: var(--r-2xl); background: var(--surface);
+  border: 1px solid var(--line); box-shadow: var(--shadow-inset); padding: 24px;
+  transition: border-color var(--dur), transform var(--dur) var(--ease-out);
+  &:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+}
+.card--glow { box-shadow: var(--shadow-inset), var(--shadow-glow); }
+
+/* Karta orqasidagi katta xira raqam: 01, 02 ... */
+.ghost-num {
+  position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+  font: 600 clamp(3rem, 5vw, 4.5rem) / 1 var(--font-display); letter-spacing: -0.04em;
+  color: var(--fg-4); opacity: 0.35; pointer-events: none; user-select: none;
+}
+
+/* ---------- Tag / badge ---------- */
+.tag {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
+  border-radius: var(--r-pill); font: 500 0.65rem var(--font-mono);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.tag--accent  { background: var(--accent); color: #fff; }            // "TASDIQLANGAN"
+.tag--outline { border: 1px solid var(--line); color: var(--fg-3); }
+.meta { font: 400 0.68rem var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); } // "AUTOCENTER · AVTOMOBIL"
+
+/* ---------- Chip (sohalar, texnologiyalar) ---------- */
+.chip {
+  display: flex; align-items: center; gap: 12px; padding: 14px 18px;
+  border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--line);
+  color: var(--fg); font-size: 0.9rem;
+  svg { color: var(--accent-soft); flex-shrink: 0; }
+  &:hover { background: var(--surface-2); }
+}
+
+/* ---------- Stat: "40+ Yakunlangan loyiha" ---------- */
+.stat { display: inline-flex; align-items: baseline; gap: 8px; }
+.stat__value { font: 600 1.35rem var(--font-display); color: var(--fg); }
+.stat__label { font-size: var(--fs-sm); color: var(--fg-3); }
+
+/* ---------- Form ---------- */
+.field {
+  width: 100%; height: 48px; padding: 0 16px; border-radius: var(--r-sm);
+  background: var(--surface-2); border: 1px solid var(--line); color: var(--fg);
+  font: 400 0.9rem var(--font-body); transition: border-color var(--dur-fast);
+  &::placeholder { color: var(--fg-3); }
+  &:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-bg); }
+}
+textarea.field { height: auto; min-height: 96px; padding: 14px 16px; resize: vertical; }
+.form-note { font: 400 0.68rem var(--font-mono); color: var(--fg-3); text-align: center; letter-spacing: 0.04em; }
+
+/* ---------- Header (suzuvchi shisha panel) ---------- */
+.site-header {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 50;
+  width: min(1160px, calc(100% - 32px)); height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 20px;
+  border-radius: var(--r-pill); background: rgba(13, 13, 18, 0.6);
+  border: 1px solid var(--line); backdrop-filter: var(--blur-glass); -webkit-backdrop-filter: var(--blur-glass);
+}
+.nav-link { padding: 6px 14px; border-radius: var(--r-pill); font-size: var(--fs-sm); color: var(--fg-2); text-decoration: none; &:hover { color: var(--fg); } }
+.lang-switch a { font: 500 0.68rem var(--font-mono); color: var(--fg-3); padding: 4px; text-decoration: none; &.active { color: var(--fg); } }
+
+/* ---------- Fon effektlari ---------- */
+.glow-spot {   // bo'lim orqasidagi ko'k dog'
+  position: absolute; width: 600px; height: 600px; border-radius: 50%; pointer-events: none; z-index: 0;
+  background: radial-gradient(circle, rgba(79, 125, 255, 0.14) 0%, transparent 65%);
+  filter: blur(20px);
+}
+.grid-bg {     // hero orqasidagi ingichka setka
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%);
+  opacity: 0.4;
+}
+.watermark {   // footer'dagi katta "TRUSTCODE"
+  font: 700 clamp(5rem, 16vw, 15rem) / 0.85 var(--font-display); letter-spacing: -0.05em;
+  color: transparent; background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 85%);
+  -webkit-background-clip: text; background-clip: text; text-align: center; user-select: none;
+}
+
+/* ---------- Marquee (logotip/texnologiya qatori) ---------- */
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee__track { display: flex; gap: 56px; width: max-content; animation: marquee 40s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Scroll reveal (RevealDirective bilan) ---------- */
+[appReveal] { opacity: 0; transform: translateY(24px); filter: blur(6px);
+  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out), filter var(--dur-reveal) var(--ease-out); }
+[appReveal].is-visible { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [appReveal] { opacity: 1; transform: none; filter: none; }
+}

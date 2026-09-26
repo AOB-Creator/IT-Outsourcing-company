@@ -72,8 +72,8 @@
     </div>
 
     <div class="grid grid--3">
-      @for (service of services; track service.id) {
-        <a class="card card--hover service-card" [routerLink]="navPath('services')" [fragment]="service.id">
+      @for (service of services; track service.id; let i = $index) {
+        <a class="card card--hover service-card" appReveal [revealDelay]="i * 80" [routerLink]="navPath('services')" [fragment]="service.id">
           <span class="service-card__icon"><app-icon [name]="service.icon" [size]="26" /></span>
           <h3>{{ service.title }}</h3>
           <p>{{ service.solution }}</p>
@@ -98,8 +98,8 @@
       <h2>{{ i18n.t('home.why.title') }}</h2>
     </div>
     <div class="grid grid--4">
-      @for (item of whyItems; track item.title) {
-        <div class="why-card">
+      @for (item of whyItems; track item.title; let i = $index) {
+        <div class="why-card" appReveal [revealDelay]="i * 80">
           <span class="why-card__icon"><app-icon [name]="item.icon" [size]="24" /></span>
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
@@ -116,8 +116,8 @@
       <h2>{{ i18n.t('home.process.title') }}</h2>
     </div>
     <div class="grid grid--4 process">
-      @for (step of processSteps; track step.num) {
-        <div class="process__step">
+      @for (step of processSteps; track step.num; let i = $index) {
+        <div class="process__step" appReveal [revealDelay]="i * 80">
           <span class="process__num">{{ step.num }}</span>
           <h3>{{ step.title }}</h3>
           <p>{{ step.desc }}</p>
@@ -134,8 +134,8 @@
       <h2>{{ i18n.t('home.casesSection.title') }}</h2>
     </div>
     <div class="grid grid--3">
-      @for (item of cases; track item.industry) {
-        <div class="card card--hover case-card">
+      @for (item of cases; track item.industry; let i = $index) {
+        <div class="card card--hover case-card" appReveal [revealDelay]="i * 80">
           <span class="tag">{{ item.industry }}</span>
           <p class="case-card__result">{{ item.result }}</p>
           <p>{{ item.solution }}</p>

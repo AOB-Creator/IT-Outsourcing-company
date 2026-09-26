@@ -1,0 +1,77 @@
+// TrustCode Partners — design tokens
+// Reference: unical.uz uslubi (dark, single blue accent, mono labels).
+// Hamma rang/o'lcham faqat shu yerdan olinadi. Komponentlarda hex yozilmaydi.
+
+// Shriftlar index.html <head> ichida ulanadi (DESIGN.md → "Shriftlar").
+
+:root {
+  /* ---------- Colors ---------- */
+  --bg:            #08080b;   // sahifa foni
+  --bg-2:          #0d0d12;   // alternativ bo'lim foni
+  --surface:       #131319;   // karta ichi
+  --surface-2:     #1a1a22;   // input, chip
+  --surface-3:     #23232c;   // hover
+  --line:          rgba(255, 255, 255, 0.08);  // chegara
+  --line-strong:   rgba(255, 255, 255, 0.14);
+  --glass:         rgba(255, 255, 255, 0.03);  // header, ghost tugma
+
+  --fg:            #f4f4f6;   // asosiy matn
+  --fg-2:          #b9b9c3;   // paragraf
+  --fg-3:          #86868f;   // yordamchi, caption
+  --fg-4:          #4a4a55;   // katta xira raqamlar (01, 02)
+
+  --accent:        #4f7dff;   // CTA, aksent
+  --accent-hover:  #6a91ff;
+  --accent-soft:   #6f97ff;   // ko'k matn, eyebrow
+  --accent-bg:     rgba(79, 125, 255, 0.12);
+  --accent-glow:   rgba(79, 125, 255, 0.35);
+
+  --star:          #f5b64f;   // reyting
+  --success:       #3ecf8e;
+
+  /* ---------- Typography ---------- */
+  --font-display:  'Space Grotesk', system-ui, sans-serif;     // h1-h3, raqamlar
+  --font-body:     'Plus Jakarta Sans', system-ui, sans-serif; // matn, tugma
+  --font-mono:     'JetBrains Mono', ui-monospace, monospace;  // eyebrow, teg, caption
+
+  --fs-h1:   clamp(2.5rem, 5.2vw, 4.7rem);   // 75px desktop
+  --fs-h2:   clamp(2rem, 3.2vw, 2.7rem);     // 43px
+  --fs-h3:   1.5rem;                         // 24px (katta karta)
+  --fs-h4:   1.125rem;                       // 18px (kichik karta)
+  --fs-lead: 1.05rem;                        // 16.8px hero paragraf
+  --fs-body: 0.95rem;
+  --fs-sm:   0.82rem;                        // tugma, nav
+  --fs-eyebrow: 0.7rem;                      // 11.2px mono
+
+  --lh-tight: 0.98;   // h1
+  --lh-head:  1.05;   // h2
+  --lh-body:  1.625;
+  --ls-h1:   -0.03em;
+  --ls-h2:   -0.03em;
+  --ls-eyebrow: 0.22em;
+
+  /* ---------- Radius ---------- */
+  --r-pill: 9999px;   // tugma, header, chip
+  --r-xs:   6px;
+  --r-sm:   12px;     // input
+  --r-md:   16px;     // kichik karta, chip-karta
+  --r-lg:   22px;     // bezel ichki
+  --r-xl:   28px;     // bezel tashqi
+  --r-2xl:  24px;     // keys karta
+
+  /* ---------- Spacing / layout ---------- */
+  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --section-y: clamp(72px, 9vw, 128px);
+  --header-h: 58px;
+
+  /* ---------- Effects ---------- */
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-glow:  0 0 80px -10px var(--accent-glow);
+  --blur-glass:   blur(24px);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur:      320ms;
+  --dur-reveal: 800ms;
+}

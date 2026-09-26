@@ -121,7 +121,7 @@ p  { margin: 0; color: var(--fg-2); }
 
 /* ---------- Form ---------- */
 .field {
-  width: 100%; height: 48px; padding: 0 16px; border-radius: var(--r-sm);
+  width: 100%; min-width: 0; height: 48px; padding: 0 16px; border-radius: var(--r-sm);
   background: var(--surface-2); border: 1px solid var(--line); color: var(--fg);
   font: 400 0.9rem var(--font-body); transition: border-color var(--dur-fast);
   &::placeholder { color: var(--fg-3); }

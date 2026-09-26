@@ -67,7 +67,7 @@ export class ContactComponent {
     this.status.set('sending');
     try {
       const { website: _website, ...payload } = this.form.getRawValue();
-      await this.contactService.submit(payload);
+      await this.contactService.submit({ ...payload, lang: this.i18n.lang() });
       this.status.set('success');
       this.form.reset();
     } catch {

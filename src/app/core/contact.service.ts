@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 export interface ContactPayload {
   name: string;
@@ -7,19 +9,15 @@ export interface ContactPayload {
   employees: string;
   contact: string;
   message: string;
+  lang: string;
 }
 
-/**
- * Sending the Telegram/email notification requires a server-side bot token,
- * which must never live in frontend code. This service is the integration
- * point for that backend endpoint; until one is configured it resolves
- * locally so the form remains fully testable end to end.
- */
+// The Telegram bot token lives only in the /api/contact serverless function.
 @Injectable({ providedIn: 'root' })
 export class ContactService {
+  private http = inject(HttpClient);
+
   async submit(payload: ContactPayload): Promise<void> {
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    // eslint-disable-next-line no-console
-    console.info('[contact] request captured', payload);
+    await firstValueFrom(this.http.post('/api/contact', payload));
   }
 }

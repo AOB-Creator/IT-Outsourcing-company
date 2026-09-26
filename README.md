@@ -46,6 +46,16 @@ Each file contains hierarchical keys for:
 - Industry benefits and features
 - Team role descriptions
 
+## Contact form → Telegram
+
+Submissions are sent by the Vercel function `api/contact.mjs` to a Telegram chat.
+Set these environment variables in Vercel (Project → Settings → Environment Variables), then redeploy:
+
+- `TELEGRAM_BOT_TOKEN` — token from @BotFather
+- `TELEGRAM_CHAT_ID` — ID of the group or user that receives requests
+
+`ng serve` has no `/api`, so the form shows an error locally; test it on a Vercel deployment or with `vercel dev`.
+
 ## Development
 
 ### Setup

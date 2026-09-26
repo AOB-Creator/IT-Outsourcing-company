@@ -1,32 +1,101 @@
 .page-hero {
-  background: var(--color-slate-50);
-  padding: var(--space-16) 0;
-  border-bottom: 1px solid var(--color-slate-200);
+  background: radial-gradient(1200px 500px at 20% -10%, rgba(79, 125, 255, 0.15), transparent 50%), var(--bg);
+  padding: clamp(48px, 6vw, 96px) 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+
+  h1 { color: var(--fg); }
+  p { color: var(--fg-2); }
 }
 
 .page-hero__inner { max-width: 680px; }
 
-.contact__grid {
-  display: grid;
-  gap: var(--space-8);
-  align-items: start;
+.contact-bezel {
+  box-shadow: var(--shadow-glow);
 }
 
-@media (min-width: 900px) {
-  .contact__grid {
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+
+  @media (min-width: 900px) {
     grid-template-columns: 1.4fr 1fr;
   }
 }
 
-.contact-form { display: flex; flex-direction: column; }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-4);
+}
 
 .field-row {
   display: grid;
   gap: var(--space-6);
+
+  @media (min-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media (min-width: 560px) {
-  .field-row { grid-template-columns: 1fr 1fr; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    color: var(--fg);
+    font: 400 0.9rem var(--font-body);
+    transition: border-color var(--dur-fast);
+
+    &::placeholder {
+      color: var(--fg-3);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+  }
+
+  .textarea {
+    min-height: 96px;
+    resize: vertical;
+  }
+
+  &.field--invalid {
+    .input,
+    .select,
+    .textarea {
+      border-color: #ef4444;
+    }
+  }
+}
+
+.field-error {
+  font-size: var(--fs-xs);
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.hp-field {
+  display: none;
 }
 
 .form-status {
@@ -35,37 +104,74 @@
   gap: var(--space-2);
   margin: var(--space-4) 0 0;
   font-weight: 500;
+  font-size: var(--fs-sm);
 }
 
-.form-status--success { color: var(--color-success); }
-.form-status--error { color: var(--color-error); }
+.form-status--success { color: #10b981; }
+.form-status--error { color: #ef4444; }
 
-.contact-info h3 { margin-bottom: var(--space-4); }
+.contact-info {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+
+    h3 {
+      margin: 0;
+      color: var(--fg);
+      font-size: var(--fs-h3);
+    }
+  }
+}
 
 .contact-info__list {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--fg-2);
+    font-size: var(--fs-sm);
+
+    a {
+      color: var(--fg);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color var(--dur-fast);
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+
+    app-icon {
+      color: var(--accent-soft);
+      flex-shrink: 0;
+    }
+  }
 }
 
-.contact-info__list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  color: var(--color-slate-600);
-
-  a { color: var(--color-slate-900); font-weight: 500; }
-  app-icon { color: var(--color-teal); flex: none; }
+.telegram-btn {
+  margin-bottom: var(--space-4);
 }
-
-.telegram-btn { margin-bottom: var(--space-4); }
 
 .contact-info__response {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 14px;
-  color: var(--color-slate-600);
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
   margin: 0;
+  font-weight: 500;
 }

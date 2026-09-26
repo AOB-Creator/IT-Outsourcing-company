@@ -7,8 +7,10 @@
 </section>
 
 <section class="section contact">
-  <div class="container contact__grid">
-    <form class="card contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="container">
+    <div class="bezel contact-bezel">
+      <div class="bezel__core contact__inner">
+        <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
       <!-- honeypot -->
       <div class="hp-field" aria-hidden="true">
         <label for="website">Website</label>
@@ -138,6 +140,8 @@
           <app-icon name="clock" [size]="14" /> {{ i18n.t('contact.info.responseTime') }}
         </p>
       </div>
-    </aside>
+        </aside>
+      </div>
+    </div>
   </div>
 </section>

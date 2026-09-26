@@ -11,25 +11,28 @@
     <div class="cases">
       @for (item of items; track item.industry) {
         <article class="card case">
-          <span class="tag">{{ item.industry }}</span>
+          <div class="case__top">
+            <span class="meta">{{ item.industry }}</span>
+            <span class="meta">{{ ($index + 1).toString().padStart(2, '0') }} / {{ items.length.toString().padStart(2, '0') }}</span>
+          </div>
 
           <div class="case__body">
             <div>
-              <h3 class="case__label">{{ i18n.t('portfolioPage.problemLabel') }}</h3>
+              <h3 class="label">{{ i18n.t('portfolioPage.problemLabel') }}</h3>
               <p>{{ item.problem }}</p>
             </div>
             <div>
-              <h3 class="case__label">{{ i18n.t('portfolioPage.solutionLabel') }}</h3>
+              <h3 class="label">{{ i18n.t('portfolioPage.solutionLabel') }}</h3>
               <p>{{ item.solution }}</p>
             </div>
           </div>
 
           <div class="case__result">
-            <h3 class="case__label">{{ i18n.t('portfolioPage.resultLabel') }}</h3>
+            <h3 class="label">{{ i18n.t('portfolioPage.resultLabel') }}</h3>
             <p class="case__result-value">{{ item.result }}</p>
           </div>
 
-          <ul class="case__tags">
+          <ul class="pill-list">
             @for (tag of item.tags; track tag) {
               <li>{{ tag }}</li>
             }
@@ -40,7 +43,7 @@
   </div>
 </section>
 
-<section class="section section--dark final-cta">
+<section class="section final-cta">
   <div class="container final-cta__inner">
     <h2>{{ i18n.t('home.cta.title') }}</h2>
     <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>

@@ -1,64 +1,45 @@
-.page-hero {
-  background: var(--color-slate-50);
-  padding: var(--space-16) 0;
-  border-bottom: 1px solid var(--color-slate-200);
-}
-
-.page-hero__inner { max-width: 680px; }
-
 .cases {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: 16px;
 }
 
-.case { display: flex; flex-direction: column; gap: var(--space-6); }
+.case {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: clamp(24px, 3.5vw, 40px);
+  overflow: hidden;
 
-.case__label {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--color-slate-600);
-  margin-bottom: var(--space-2);
+  @media (min-width: 900px) {
+    grid-template-columns: 1.4fr 1fr;
+    .case__top, .pill-list { grid-column: 1 / -1; }
+  }
+
+  p { font-size: var(--fs-sm); line-height: 1.65; }
 }
+
+.case__top { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 
 .case__body {
   display: grid;
-  gap: var(--space-6);
-}
+  gap: 20px;
 
-@media (min-width: 768px) {
-  .case__body { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 640px) { grid-template-columns: 1fr 1fr; }
 }
 
 .case__result {
-  padding: var(--space-4) var(--space-6);
-  background: var(--color-slate-50);
-  border-radius: var(--radius-sm);
-  border-left: 3px solid var(--color-teal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  border-radius: var(--r-md);
+  background: var(--accent-bg);
+  border: 1px solid rgba(79, 125, 255, 0.25);
 }
 
 .case__result-value {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--color-navy);
-  margin: 0;
-}
-
-.case__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-
-  li {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-slate-600);
-    border: 1px solid var(--color-slate-200);
-    border-radius: 999px;
-    padding: 4px 12px;
-  }
+  font: 600 clamp(1.3rem, 2.2vw, 1.7rem) / 1.2 var(--font-display) !important;
+  letter-spacing: -0.02em;
+  color: var(--fg) !important;
 }

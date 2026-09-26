@@ -1,84 +1,53 @@
-.page-hero {
-  background: var(--color-slate-50);
-  padding: var(--space-16) 0;
-  border-bottom: 1px solid var(--color-slate-200);
-}
-
-.page-hero__inner {
-  max-width: 680px;
-}
-
 .services-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: 16px;
 }
 
 .service-detail {
-  scroll-margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(24px, 3.5vw, 40px);
+  scroll-margin-top: 110px;
+  overflow: hidden;
+
+  .ghost-num { top: 36px; transform: none; }
 }
 
 .service-detail__head {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  gap: 18px;
+  padding-right: 96px;
 
-  h2 { margin-bottom: var(--space-2); }
-}
+  h2 { font-size: clamp(1.4rem, 2.4vw, 1.85rem); margin-bottom: 10px; }
+  .meta { display: inline-flex; align-items: center; gap: 6px; }
 
-.service-detail__icon {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-sm);
-  background: rgba(0, 194, 168, 0.1);
-  color: var(--color-teal);
-}
-
-.service-detail__label {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--color-slate-600);
-  margin-bottom: var(--space-2);
+  @media (max-width: 560px) { flex-direction: column; padding-right: 0; }
 }
 
 .service-detail__grid {
   display: grid;
-  gap: var(--space-6);
-  margin-bottom: var(--space-6);
-}
+  gap: 16px;
 
-@media (min-width: 768px) {
-  .service-detail__grid {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: 768px) { grid-template-columns: 1fr 1fr; }
+
+  > div {
+    padding: 20px;
+    border-radius: var(--r-md);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
   }
+  > div:last-child { border-color: rgba(79, 125, 255, 0.25); background: var(--accent-bg); }
+  p { font-size: var(--fs-sm); line-height: 1.65; }
 }
 
 .service-detail__tech {
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--color-slate-200);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-top: var(--space-3);
-  }
-
-  li {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: var(--color-slate-50);
-    border: 1px solid var(--color-slate-200);
-    color: var(--color-navy);
-  }
+  .label { margin: 0; }
 }

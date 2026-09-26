@@ -166,7 +166,8 @@
   "home": {
     "hero": {
       "eyebrow": "Moliya va Fintech · Toshkent",
-      "title": "Bank darajasidagi ishonchlilik — biznesingiz uchun",
+      "title": "Bank darajasidagi ishonchlilik —",
+      "titleAccent": "biznesingiz uchun",
       "subtitle": "Bank va fintech sohasida yillar davomida ishlagan backend/frontend dasturchilar jamoasi. Murakkab moliyaviy tizimlarni ishonchli, xavfsiz va muddatida yetkazib beramiz.",
       "ctaPrimary": "Konsultatsiya olish",
       "ctaSecondary": "Ishlarni ko'rish",
@@ -277,7 +278,8 @@
       "sending": "Yuborilmoqda...",
       "success": "Rahmat! So'rovingiz qabul qilindi, tez orada bog'lanamiz.",
       "error": "Xatolik yuz berdi, maydonlarni tekshirib qaytadan urinib ko'ring.",
-      "required": "Majburiy maydon"
+      "required": "Majburiy maydon",
+      "note": "Ma'lumotlaringiz maxfiy. NDA imzolashga tayyormiz."
     },
     "info": {
       "title": "Bog'lanish ma'lumotlari",

@@ -12,14 +12,14 @@
       <h2>{{ i18n.t('about.historyTitle') }}</h2>
       <p class="lead">{{ i18n.t('about.historyText') }}</p>
     </div>
-    <div class="history__list">
-      <h3 class="about-label">{{ i18n.t('about.experienceTitle') }}</h3>
+    <div class="bezel history__list"><div class="bezel__core">
+      <h3 class="label">{{ i18n.t('about.experienceTitle') }}</h3>
       <ul>
         @for (item of experience; track item) {
           <li><app-icon name="check" [size]="16" />{{ item }}</li>
         }
       </ul>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -28,10 +28,10 @@
     <div class="section-head section-head--center">
       <h2>{{ i18n.t('about.principlesTitle') }}</h2>
     </div>
-    <div class="grid grid--4">
+    <div class="cards-4">
       @for (item of principles; track item) {
         <div class="card principle">
-          <span class="principle__icon"><app-icon name="shield" [size]="22" /></span>
+          <span class="icon-box"><app-icon name="shield" [size]="20" /></span>
           <p>{{ item }}</p>
         </div>
       }
@@ -45,12 +45,11 @@
       <h2>{{ i18n.t('about.teamTitle') }}</h2>
       <p class="lead">{{ i18n.t('about.teamText') }}</p>
     </div>
-    <div class="grid grid--4">
+    <div class="team-grid">
       @for (member of team; track member.role) {
         <div class="card team-card">
-          <span class="team-card__avatar"><app-icon name="users" [size]="26" /></span>
+          <span class="team-card__count">{{ member.count }}</span>
           <h3>{{ member.role }}</h3>
-          <span class="tag">{{ member.count }}</span>
         </div>
       }
     </div>
@@ -70,7 +69,7 @@
   </div>
 </section>
 
-<section class="section section--dark final-cta">
+<section class="section final-cta">
   <div class="container final-cta__inner">
     <h2>{{ i18n.t('home.cta.title') }}</h2>
     <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>

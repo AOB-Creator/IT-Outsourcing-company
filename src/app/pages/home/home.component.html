@@ -1,58 +1,69 @@
 <!-- Hero -->
 <section class="hero">
-  <div class="hero__bg-elements">
-    <div class="hero__shape hero__shape--1"></div>
-    <div class="hero__shape hero__shape--2"></div>
-    <div class="hero__shape hero__shape--3"></div>
-  </div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="glow-spot hero__glow hero__glow--a" aria-hidden="true"></div>
+  <div class="glow-spot hero__glow hero__glow--b" aria-hidden="true"></div>
 
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="eyebrow">{{ i18n.t('home.hero.eyebrow') || 'Engineering Excellence' }}</span>
-      <h1>{{ i18n.t('home.hero.title') }}</h1>
-      <p class="lead">{{ i18n.t('home.hero.subtitle') }}</p>
+      <span class="eyebrow eyebrow--pill">{{ i18n.t('home.hero.eyebrow') }}</span>
+      <h1>
+        {{ i18n.t('home.hero.title') }}
+        <span class="text-accent">{{ i18n.t('home.hero.titleAccent') }}</span>
+      </h1>
+      <p class="lead hero__lead">{{ i18n.t('home.hero.subtitle') }}</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.hero.ctaPrimary') }}</a>
-        <a class="btn btn--on-dark" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
+        <a class="btn btn--primary btn--lg" [routerLink]="navPath('contact')">
+          {{ i18n.t('home.hero.ctaPrimary') }}
+          <span class="btn__icon"><app-icon name="arrow-right" [size]="16" /></span>
+        </a>
+        <a class="btn btn--ghost btn--lg" [routerLink]="navPath('portfolio')">{{ i18n.t('home.hero.ctaSecondary') }}</a>
       </div>
-      <div class="hero__stats">
-        <div class="hero__stat">
-          <span class="stat-label">{{ i18n.t('home.hero.stat1Label') || '8 Developers' }}</span>
-        </div>
-        <div class="hero__stat-divider"></div>
-        <div class="hero__stat">
-          <span class="stat-label">{{ i18n.t('home.hero.stat2Label') || '4 Seniors' }}</span>
-        </div>
-        <div class="hero__stat-divider"></div>
-        <div class="hero__stat">
-          <span class="stat-label">{{ i18n.t('home.hero.stat3Label') || 'Java/Angular' }}</span>
-        </div>
-      </div>
+      <ul class="hero__facts">
+        <li><app-icon name="users" [size]="16" />{{ i18n.t('home.hero.stat1Label') }}</li>
+        <li><app-icon name="award" [size]="16" />{{ i18n.t('home.hero.stat2Label') }}</li>
+        <li><app-icon name="layers" [size]="16" />{{ i18n.t('home.hero.stat3Label') }}</li>
+      </ul>
     </div>
 
-    <div class="hero__visual">
-      <div class="bezel hero__dashboard">
-        <div class="bezel__core">
-          <div class="dashboard">
-            <div class="dashboard__header">
-              <span class="chip">SYSTEM</span>
-              <span class="chip chip--success">LIVE</span>
-            </div>
-            <div class="dashboard__content">
-              <div class="dashboard__item">
-                <span class="dashboard__label">Performance</span>
-                <span class="dashboard__value">98%</span>
-              </div>
-              <div class="dashboard__item">
-                <span class="dashboard__label">Uptime</span>
-                <span class="dashboard__value">99.9%</span>
-              </div>
-              <div class="dashboard__item">
-                <span class="dashboard__label">Response</span>
-                <span class="dashboard__value">&lt;100ms</span>
-              </div>
-            </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="bezel hero__panel">
+        <div class="bezel__core panel">
+          <div class="panel__bar">
+            <span class="panel__dots"><i></i><i></i><i></i></span>
+            <span class="meta">core-banking · prod</span>
+            <span class="panel__live"><i></i>LIVE</span>
           </div>
+
+          <div class="panel__main">
+            <div>
+              <span class="label">Uptime · 30d</span>
+              <span class="panel__big">99.98<small>%</small></span>
+            </div>
+            <svg class="panel__chart" viewBox="0 0 240 72" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="heroChartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#4f7dff" stop-opacity="0.45" />
+                  <stop offset="1" stop-color="#4f7dff" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0 52 L20 46 L40 50 L60 38 L80 42 L100 30 L120 34 L140 22 L160 28 L180 16 L200 20 L220 10 L240 14 L240 72 L0 72 Z" fill="url(#heroChartFill)" />
+              <path d="M0 52 L20 46 L40 50 L60 38 L80 42 L100 30 L120 34 L140 22 L160 28 L180 16 L200 20 L220 10 L240 14" fill="none" stroke="#6f97ff" stroke-width="2" vector-effect="non-scaling-stroke" />
+            </svg>
+          </div>
+
+          <div class="panel__metrics">
+            <div><span class="label">P95 latency</span><strong>84<small>ms</small></strong></div>
+            <div><span class="label">Req / sec</span><strong>2.4<small>k</small></strong></div>
+            <div><span class="label">Deploys</span><strong>37</strong></div>
+            <div><span class="label">Incidents</span><strong class="is-ok">0</strong></div>
+          </div>
+
+          <ul class="panel__log">
+            <li><span class="ok"></span><code>credit-scoring</code> v2.4.1 deployed<time>2m</time></li>
+            <li><span class="ok"></span><code>kyc-service</code> checks passed<time>14m</time></li>
+            <li><span class="info"></span><code>payments-api</code> scaled to 6 pods<time>1h</time></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -60,12 +71,12 @@
 </section>
 
 <!-- Trust line -->
-<section class="section section--muted trust">
+<section class="trust">
   <div class="container">
-    <div class="grid grid--4">
-      @for (stat of stats; track stat.label) {
-        <div class="trust__item">
-          <span class="stat-number">{{ stat.value }}</span>
+    <div class="trust__grid">
+      @for (stat of stats; track stat.label; let i = $index) {
+        <div class="trust__item" appReveal [revealDelay]="i * 80">
+          <span class="trust__value">{{ stat.value }}</span>
           <p>{{ stat.label }}</p>
         </div>
       }
@@ -76,28 +87,31 @@
 <!-- Services -->
 <section class="section" id="services">
   <div class="container">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">{{ i18n.t('nav.services') }}</span>
-      <h2>{{ i18n.t('home.servicesSection.title') }}</h2>
+    <div class="section-head section-head--split">
+      <div>
+        <span class="eyebrow">{{ i18n.t('nav.services') }}</span>
+        <h2>{{ i18n.t('home.servicesSection.title') }}</h2>
+      </div>
       <p class="lead">{{ i18n.t('home.servicesSection.subtitle') }}</p>
     </div>
 
-    <div class="grid grid--3">
+    <div class="services-grid">
       @for (service of services; track service.id; let i = $index) {
-        <a class="card card--hover service-card" appReveal [revealDelay]="i * 80" [routerLink]="navPath('services')" [fragment]="service.id">
-          <span class="service-card__icon"><app-icon [name]="service.icon" [size]="26" /></span>
+        <a class="card service-card" appReveal [revealDelay]="(i % 3) * 80" [routerLink]="navPath('services')" [fragment]="service.id">
+          <span class="ghost-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="icon-box"><app-icon [name]="service.icon" [size]="22" /></span>
           <h3>{{ service.title }}</h3>
           <p>{{ service.solution }}</p>
           <span class="service-card__link">
             {{ i18n.t('home.servicesSection.detail') }}
-            <app-icon name="arrow-right" [size]="16" />
+            <app-icon name="arrow-right" [size]="14" />
           </span>
         </a>
       }
     </div>
 
     <div class="section-cta">
-      <a class="btn btn--secondary" [routerLink]="navPath('services')">{{ i18n.t('home.servicesSection.link') }}</a>
+      <a class="btn btn--ghost" [routerLink]="navPath('services')">{{ i18n.t('home.servicesSection.link') }}</a>
     </div>
   </div>
 </section>
@@ -106,14 +120,17 @@
 <section class="section section--muted">
   <div class="container">
     <div class="section-head section-head--center">
+      <span class="eyebrow">TrustCode</span>
       <h2>{{ i18n.t('home.why.title') }}</h2>
     </div>
-    <div class="grid grid--4">
+    <div class="why-grid">
       @for (item of whyItems; track item.title; let i = $index) {
-        <div class="why-card" appReveal [revealDelay]="i * 80">
-          <span class="why-card__icon"><app-icon [name]="item.icon" [size]="24" /></span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
+        <div class="bezel why-card" appReveal [revealDelay]="i * 80">
+          <div class="bezel__core">
+            <span class="icon-box"><app-icon [name]="item.icon" [size]="22" /></span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+          </div>
         </div>
       }
     </div>
@@ -124,42 +141,47 @@
 <section class="section">
   <div class="container">
     <div class="section-head section-head--center">
+      <span class="eyebrow">Workflow</span>
       <h2>{{ i18n.t('home.process.title') }}</h2>
     </div>
-    <div class="grid grid--4 process">
+    <ol class="process">
       @for (step of processSteps; track step.num; let i = $index) {
-        <div class="process__step" appReveal [revealDelay]="i * 80">
+        <li class="process__step" appReveal [revealDelay]="i * 80">
           <span class="process__num">{{ step.num }}</span>
           <h3>{{ step.title }}</h3>
           <p>{{ step.desc }}</p>
-        </div>
+        </li>
       }
-    </div>
+    </ol>
   </div>
 </section>
 
 <!-- Cases teaser -->
 <section class="section section--muted">
   <div class="container">
-    <div class="section-head section-head--center">
-      <h2>{{ i18n.t('home.casesSection.title') }}</h2>
+    <div class="section-head section-head--split">
+      <div>
+        <span class="eyebrow">{{ i18n.t('nav.portfolio') }}</span>
+        <h2>{{ i18n.t('home.casesSection.title') }}</h2>
+      </div>
+      <a class="btn btn--ghost" [routerLink]="navPath('portfolio')">
+        {{ i18n.t('home.casesSection.link') }}
+        <span class="btn__icon"><app-icon name="arrow-right" [size]="14" /></span>
+      </a>
     </div>
-    <div class="grid grid--3">
+    <div class="cases-grid">
       @for (item of cases; track item.industry; let i = $index) {
-        <div class="card card--hover case-card" appReveal [revealDelay]="i * 80">
-          <span class="tag">{{ item.industry }}</span>
+        <article class="card case-card" appReveal [revealDelay]="i * 80">
+          <span class="meta">{{ item.industry }}</span>
           <p class="case-card__result">{{ item.result }}</p>
           <p>{{ item.solution }}</p>
-          <ul class="case-card__tags">
+          <ul class="pill-list">
             @for (tag of item.tags; track tag) {
               <li>{{ tag }}</li>
             }
           </ul>
-        </div>
+        </article>
       }
-    </div>
-    <div class="section-cta">
-      <a class="btn btn--secondary" [routerLink]="navPath('portfolio')">{{ i18n.t('home.casesSection.link') }}</a>
     </div>
   </div>
 </section>
@@ -168,22 +190,30 @@
 <section class="section">
   <div class="container">
     <div class="section-head section-head--center">
+      <span class="eyebrow">Feedback</span>
       <h2>{{ i18n.t('home.testimonials.title') }}</h2>
     </div>
     <div class="testimonials-empty">
+      <span class="icon-box"><app-icon name="users" [size]="22" /></span>
       <p>{{ i18n.t('home.testimonials.empty') }}</p>
     </div>
   </div>
 </section>
 
 <!-- Final CTA -->
-<section class="section section--dark final-cta">
+<section class="section final-cta">
   <div class="container final-cta__inner">
+    <span class="eyebrow eyebrow--pill">{{ i18n.t('nav.cta') }}</span>
     <h2>{{ i18n.t('home.cta.title') }}</h2>
     <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" [routerLink]="navPath('contact')">{{ i18n.t('home.cta.ctaPrimary') }}</a>
-      <a class="btn btn--on-dark" href="https://t.me/trustcode_partners" target="_blank" rel="noopener">{{ i18n.t('home.cta.ctaSecondary') }}</a>
+    <div class="final-cta__actions">
+      <a class="btn btn--primary btn--lg" [routerLink]="navPath('contact')">
+        {{ i18n.t('home.cta.ctaPrimary') }}
+        <span class="btn__icon"><app-icon name="arrow-right" [size]="16" /></span>
+      </a>
+      <a class="btn btn--ghost btn--lg" href="https://t.me/trustcode_partners" target="_blank" rel="noopener">
+        <app-icon name="telegram" [size]="16" /> {{ i18n.t('home.cta.ctaSecondary') }}
+      </a>
     </div>
   </div>
 </section>

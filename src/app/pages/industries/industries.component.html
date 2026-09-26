@@ -8,10 +8,11 @@
 
 <section class="section">
   <div class="container">
-    <div class="grid grid--3">
+    <div class="industries-grid">
       @for (item of industries; track item.title) {
-        <div class="card card--hover industry-card">
-          <span class="industry-card__icon"><app-icon name="check" [size]="22" /></span>
+        <div class="card industry-card">
+          <span class="industry-card__num meta">{{ ($index + 1).toString().padStart(2, '0') }}</span>
+          <span class="icon-box"><app-icon name="layers" [size]="20" /></span>
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
           <ul class="industry-card__points">
@@ -28,7 +29,7 @@
   </div>
 </section>
 
-<section class="section section--dark final-cta">
+<section class="section final-cta">
   <div class="container final-cta__inner">
     <h2>{{ i18n.t('home.cta.title') }}</h2>
     <p class="lead">{{ i18n.t('home.cta.subtitle') }}</p>

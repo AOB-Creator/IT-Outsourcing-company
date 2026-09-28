@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://it-outsourcing-company-three.vercel.app/sitemap.xml
+Sitemap: https://www.trustcode.uz/sitemap.xml

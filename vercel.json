@@ -1,12 +1,39 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
-  "redirects": [{ "source": "/", "destination": "/uz", "permanent": false }],
-  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.csr.html" }],
+  "redirects": [
+    {
+      "source": "/:path((?!api/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "it-outsourcing-company-three.vercel.app"
+        }
+      ],
+      "destination": "https://www.trustcode.uz/:path",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/uz",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.csr.html"
+    }
+  ],
   "headers": [
     {
       "source": "/og/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ]
 }

@@ -56,7 +56,7 @@ description, canonical URL, `hreflang` alternates and Open Graph/Twitter tags (`
 - Site origin: `src/app/core/site.ts` (`SITE_URL`)
 - `public/sitemap.xml`, `public/robots.txt`: regenerate with `node scripts/generate-seo-assets.mjs`
 - Link-preview images: `public/og/og-{uz,ru,en}.png` (1200×630); favicons in `public/`
-- `vercel.json`: `/` → `/uz` redirect, unknown paths fall back to the client app (`index.csr.html`)
+- `vercel.json`: 301 from `it-outsourcing-company-three.vercel.app` to `https://www.trustcode.uz` (except `/api`), `/` → `/uz`, unknown paths fall back to the client app (`index.csr.html`)
 
 ## Contact form → Telegram
 

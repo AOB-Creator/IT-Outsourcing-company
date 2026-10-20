@@ -52,6 +52,10 @@ export class PortfolioComponent {
     );
   }
 
+  get domains(): string[] {
+    return this.i18n.list<string>('portfolioPage.casesDomains');
+  }
+
   get projects(): Project[] {
     return this.i18n
       .list<ProjectText>('projectsItems')

@@ -23,7 +23,7 @@
       "home": "Toshkentdagi dasturchilar jamoasi: kredit, nasiya (BNPL), KYC va CRM/ERP tizimlarini ishlab chiqamiz. Outsourcing va outstaff. Bepul konsultatsiya.",
       "services": "Kredit va mikromoliya tizimlari, nasiya platformalari, KYC/AML, fintech backend va CRM/ERP ishlab chiqish. Muddat va narxni aniq kelishamiz.",
       "industries": "Banklar, MMT, lizing, sug'urta, chakana savdo va davlat sektori uchun dasturiy yechimlar. Soha talablarini biladigan jamoa.",
-      "portfolio": "Fintech, ombor boshqaruvi, yuridik hujjatlar, bron qilish va davlat xaridlari bo'yicha ishlab chiqilgan loyihalar va keyslar.",
+      "portfolio": "Banklar, sug'urta va moliya tashkilotlari uchun yopiq tizimlar va ochiq loyihalar: kredit, kartalar, KYC, CRM, ombor boshqaruvi, legaltech.",
       "about": "Bank va fintech tizimlarida yillar davomida ishlagan backend, frontend, QA va DevOps mutaxassislari jamoasi. Toshkent.",
       "contact": "Loyihangizni muhokama qilamiz: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA imzolashga tayyormiz."
     }
@@ -289,17 +289,18 @@
   },
   "portfolioPage": {
     "title": "Portfolio / Case'lar",
-    "subtitle": "Ishlab chiqilgan mahsulotlarimiz va mijozlar uchun bajarilgan loyihalar: fintech, logistika, legaltech, turizm va davlat xaridlari.",
+    "subtitle": "Banklar, sug'urta va moliya tashkilotlari uchun yopiq korporativ tizimlar hamda ochiq ko'rsatish mumkin bo'lgan mahsulot loyihalarimiz.",
     "problemLabel": "Muammo",
     "solutionLabel": "Yechim",
     "resultLabel": "Natija",
-    "projectsEyebrow": "Mahsulotlar",
-    "projectsTitle": "Ishlab chiqilgan loyihalar",
-    "projectsSubtitle": "Jamoamiz tomonidan yaratilgan va ishlab turgan veb-ilovalar. Har birini ochib ko'rishingiz mumkin.",
+    "projectsEyebrow": "Ochiq loyihalar",
+    "projectsTitle": "Ochiq ko'rish mumkin bo'lgan loyihalar",
+    "projectsSubtitle": "Mahsulot va startap loyihalarimizdan bir qismi. Korporativ tizimlarimiz yopiq — bu yerda faqat ochiq namoyish qilish mumkin bo'lganlari.",
     "openProject": "Saytni ochish",
-    "casesEyebrow": "NDA",
-    "casesTitle": "Mijozlar uchun loyihalar",
-    "casesSubtitle": "Maxfiylik shartlari (NDA) sabab mijozlar nomlari umumiy tavsif bilan ko'rsatilgan"
+    "casesEyebrow": "Asosiy tajriba · NDA",
+    "casesTitle": "Bank, sug'urta va moliya tizimlari",
+    "casesSubtitle": "Asosiy ishimiz — banklar, sug'urta va moliya tashkilotlari uchun yopiq korporativ tizimlar. Ular NDA ostida, shuning uchun mijozlar nomi va interfeyslar ochiq ko'rsatilmaydi.",
+    "casesDomains": ["Core banking", "Kredit konveyeri", "Bank kartalari", "Bank CRM", "KYC / AML", "Sug'urta tizimlari", "Monitoring va KPI", "Hisobotlar va audit", "Tasdiqlash jarayonlari", "Integratsiyalar"]
   },
   "about": {
     "title": "Biz haqimizda",

@@ -23,7 +23,7 @@
       "home": "Tashkent-based team with banking experience: lending, BNPL, KYC and CRM/ERP systems. Outsourcing and team extension. Free consultation.",
       "services": "Lending and microfinance systems, BNPL platforms, KYC/AML, fintech backends and CRM/ERP. Clear timelines and pricing.",
       "industries": "Software solutions for banks, MFIs, leasing, insurance, retail and the public sector in Uzbekistan and Central Asia.",
-      "portfolio": "Projects and case studies we've delivered: fintech, warehouse management, legal documents, booking and public procurement.",
+      "portfolio": "Closed systems for banks, insurers and financial institutions, plus public projects: lending, cards, KYC, CRM, warehouse management, legal tech.",
       "about": "Backend, frontend, QA and DevOps engineers with years of experience building banking and fintech systems. Tashkent.",
       "contact": "Let's discuss your project: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA-ready."
     }
@@ -289,17 +289,18 @@
   },
   "portfolioPage": {
     "title": "Portfolio / Case Studies",
-    "subtitle": "Our products and client projects: fintech, logistics, legal tech, travel and public procurement.",
+    "subtitle": "Closed enterprise systems for banks, insurers and financial institutions, plus product projects we can show publicly.",
     "problemLabel": "Problem",
     "solutionLabel": "Solution",
     "resultLabel": "Result",
-    "projectsEyebrow": "Products",
-    "projectsTitle": "Projects we've built",
-    "projectsSubtitle": "Live web applications built by our team. Open any of them and take a look.",
+    "projectsEyebrow": "Public projects",
+    "projectsTitle": "Projects you can open",
+    "projectsSubtitle": "A selection of our product and startup projects. Our enterprise systems are closed — these are only the ones we can show publicly.",
     "openProject": "Open site",
-    "casesEyebrow": "NDA",
-    "casesTitle": "Client projects",
-    "casesSubtitle": "Client names are generalized due to non-disclosure agreements (NDA)"
+    "casesEyebrow": "Core experience · NDA",
+    "casesTitle": "Banking, insurance and finance systems",
+    "casesSubtitle": "Our main work is closed enterprise systems for banks, insurers and financial institutions. They are under NDA, so client names and interfaces are not published.",
+    "casesDomains": ["Core banking", "Lending pipeline", "Bank cards", "Banking CRM", "KYC / AML", "Insurance systems", "Monitoring & KPI", "Reporting & audit", "Approval workflows", "Integrations"]
   },
   "about": {
     "title": "About Us",

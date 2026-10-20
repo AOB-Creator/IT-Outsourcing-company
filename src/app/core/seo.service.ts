@@ -32,6 +32,23 @@ export class SeoService {
     }
   }
 
+  /** Page-level JSON-LD in <head>; pass null to remove it (e.g. on component destroy). */
+  jsonLd(id: string, data: object | null): void {
+    const head = this.document.head;
+    let el = head.querySelector<HTMLScriptElement>(`script[type="application/ld+json"][data-ld="${id}"]`);
+    if (!data) {
+      el?.remove();
+      return;
+    }
+    if (!el) {
+      el = this.document.createElement('script');
+      el.setAttribute('type', 'application/ld+json');
+      el.setAttribute('data-ld', id);
+      head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(data);
+  }
+
   private setUrls(url: string): void {
     const path = url.split(/[?#]/)[0];
     const [, first = '', ...rest] = path.split('/');

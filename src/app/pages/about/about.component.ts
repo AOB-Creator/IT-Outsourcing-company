@@ -23,7 +23,7 @@ export class AboutComponent {
   private seo = inject(SeoService);
 
   constructor() {
-    effect(() => this.seo.set(this.i18n.t('meta.titles.about'), this.i18n.t('about.subtitle')));
+    effect(() => this.seo.set(this.i18n.t('meta.titles.about'), this.i18n.t('meta.descriptions.about')));
   }
 
   get experience(): string[] {

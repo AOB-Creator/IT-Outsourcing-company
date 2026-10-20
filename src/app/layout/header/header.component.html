@@ -1,8 +1,8 @@
 <header class="header" [class.header--scrolled]="scrolled()">
   <div class="container header__bar">
     <a class="header__logo" [routerLink]="homePath()">
-      <span class="header__logo-mark">TC</span>
-      <span class="header__logo-text">TrustCode<em>Partners</em></span>
+      <span class="header__logo-mark" aria-hidden="true">TC</span>
+      <span class="header__logo-text">TrustCode<span class="logo-gap">&ngsp;</span><em>Partners</em></span>
     </a>
 
     <nav class="header__nav" [class.header__nav--open]="menuOpen()">

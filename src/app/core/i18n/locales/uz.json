@@ -12,12 +12,20 @@
     "siteName": "TrustCode Partners",
     "tagline": "Bank darajasidagi ishonchlilik — biznesingiz uchun",
     "titles": {
-      "home": "TrustCode Partners — Bank darajasidagi ishonchlilik",
-      "services": "Xizmatlar — TrustCode Partners",
-      "industries": "Yechimlar sohalari — TrustCode Partners",
-      "portfolio": "Portfolio — TrustCode Partners",
-      "about": "Biz haqimizda — TrustCode Partners",
-      "contact": "Aloqa — TrustCode Partners"
+      "home": "Fintech va CRM dasturlari ishlab chiqish — TrustCode",
+      "services": "Dasturiy ta'minot ishlab chiqish xizmatlari — TrustCode",
+      "industries": "Bank, lizing va savdo uchun IT yechimlar — TrustCode",
+      "portfolio": "Loyihalar va keyslar — TrustCode Partners",
+      "about": "Biz haqimizda — bank tajribali dasturchilar | TrustCode",
+      "contact": "Aloqa va bepul konsultatsiya — TrustCode Partners"
+    },
+    "descriptions": {
+      "home": "Toshkentdagi dasturchilar jamoasi: kredit, nasiya (BNPL), KYC va CRM/ERP tizimlarini ishlab chiqamiz. Outsourcing va outstaff. Bepul konsultatsiya.",
+      "services": "Kredit va mikromoliya tizimlari, nasiya platformalari, KYC/AML, fintech backend va CRM/ERP ishlab chiqish. Muddat va narxni aniq kelishamiz.",
+      "industries": "Banklar, MMT, lizing, sug'urta, chakana savdo va davlat sektori uchun dasturiy yechimlar. Soha talablarini biladigan jamoa.",
+      "portfolio": "Kredit skoring, elektron shartnoma va BNPL platformalari bo'yicha amalga oshirilgan loyihalar va ularning natijalari.",
+      "about": "Bank va fintech tizimlarida yillar davomida ishlagan backend, frontend, QA va DevOps mutaxassislari jamoasi. Toshkent.",
+      "contact": "Loyihangizni muhokama qilamiz: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA imzolashga tayyormiz."
     }
   },
   "servicesItems": [
@@ -166,8 +174,8 @@
   "home": {
     "hero": {
       "eyebrow": "Moliya va Fintech · Toshkent",
-      "title": "Bank darajasidagi ishonchlilik —",
-      "titleAccent": "biznesingiz uchun",
+      "title": "Fintech va bank tizimlarini ishlab chiqamiz —",
+      "titleAccent": "bank darajasidagi ishonchlilik bilan",
       "subtitle": "Bank va fintech sohasida yillar davomida ishlagan backend/frontend dasturchilar jamoasi. Murakkab moliyaviy tizimlarni ishonchli, xavfsiz va muddatida yetkazib beramiz.",
       "ctaPrimary": "Konsultatsiya olish",
       "ctaSecondary": "Ishlarni ko'rish",

@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject } from '@angular/core';
 import { TranslateService } from '../../core/i18n/translate.service';
 import { ConsultModalService } from '../../core/consult-modal.service';
 import { SeoService } from '../../core/seo.service';
+import { SITE_URL } from '../../core/site';
 import { IconComponent, IconName } from '../../shared/icon/icon.component';
 
 interface ServiceItem {
@@ -28,7 +29,24 @@ export class ServicesComponent {
   private seo = inject(SeoService);
 
   constructor() {
-    effect(() => this.seo.set(this.i18n.t('meta.titles.services'), this.i18n.t('servicesPage.subtitle')));
+    effect(() => {
+      this.seo.set(this.i18n.t('meta.titles.services'), this.i18n.t('meta.descriptions.services'));
+      const lang = this.i18n.lang();
+      this.seo.jsonLd('services', {
+        '@context': 'https://schema.org',
+        '@graph': this.services.map((s) => ({
+          '@type': 'Service',
+          '@id': `${SITE_URL}/${lang}/services#${s.id}`,
+          name: s.title,
+          description: s.solution,
+          serviceType: s.title,
+          inLanguage: lang,
+          areaServed: { '@type': 'Country', name: 'Uzbekistan' },
+          provider: { '@id': `${SITE_URL}/#org` },
+        })),
+      });
+    });
+    inject(DestroyRef).onDestroy(() => this.seo.jsonLd('services', null));
   }
 
   get services(): ServiceItem[] {

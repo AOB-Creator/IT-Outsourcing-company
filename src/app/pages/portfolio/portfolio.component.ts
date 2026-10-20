@@ -25,7 +25,7 @@ export class PortfolioComponent {
 
   constructor() {
     effect(() =>
-      this.seo.set(this.i18n.t('meta.titles.portfolio'), this.i18n.t('portfolioPage.subtitle')),
+      this.seo.set(this.i18n.t('meta.titles.portfolio'), this.i18n.t('meta.descriptions.portfolio')),
     );
   }
 

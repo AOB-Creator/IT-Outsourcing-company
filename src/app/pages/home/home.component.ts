@@ -57,7 +57,7 @@ export class HomeComponent {
   private seo = inject(SeoService);
 
   constructor() {
-    effect(() => this.seo.set(this.i18n.t('meta.titles.home'), this.i18n.t('meta.tagline')));
+    effect(() => this.seo.set(this.i18n.t('meta.titles.home'), this.i18n.t('meta.descriptions.home')));
   }
 
   get services(): ServiceItem[] {

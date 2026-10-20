@@ -12,12 +12,20 @@
     "siteName": "TrustCode Partners",
     "tagline": "Bank-grade reliability — for your business",
     "titles": {
-      "home": "TrustCode Partners — Bank-grade reliability",
-      "services": "Services — TrustCode Partners",
-      "industries": "Industries — TrustCode Partners",
-      "portfolio": "Portfolio — TrustCode Partners",
-      "about": "About Us — TrustCode Partners",
-      "contact": "Contact — TrustCode Partners"
+      "home": "Fintech & CRM Software Development in Uzbekistan | TrustCode",
+      "services": "Software Development Services — TrustCode Partners",
+      "industries": "Software for Banks, Leasing & Retail — TrustCode",
+      "portfolio": "Case Studies — TrustCode Partners",
+      "about": "About Us — Developers with Banking Experience | TrustCode",
+      "contact": "Contact & Free Consultation — TrustCode Partners"
+    },
+    "descriptions": {
+      "home": "Tashkent-based team with banking experience: lending, BNPL, KYC and CRM/ERP systems. Outsourcing and team extension. Free consultation.",
+      "services": "Lending and microfinance systems, BNPL platforms, KYC/AML, fintech backends and CRM/ERP. Clear timelines and pricing.",
+      "industries": "Software solutions for banks, MFIs, leasing, insurance, retail and the public sector in Uzbekistan and Central Asia.",
+      "portfolio": "Credit scoring, e-contract and BNPL platform projects and their measurable results.",
+      "about": "Backend, frontend, QA and DevOps engineers with years of experience building banking and fintech systems. Tashkent.",
+      "contact": "Let's discuss your project: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA-ready."
     }
   },
   "servicesItems": [
@@ -166,8 +174,8 @@
   "home": {
     "hero": {
       "eyebrow": "Finance & Fintech · Tashkent",
-      "title": "Bank-grade reliability —",
-      "titleAccent": "for your business",
+      "title": "We build fintech and banking software —",
+      "titleAccent": "with bank-grade reliability",
       "subtitle": "A team of backend/frontend developers with years of experience in banking and fintech. We deliver complex financial systems reliably, securely and on time.",
       "ctaPrimary": "Get a Consultation",
       "ctaSecondary": "View Our Work",

@@ -14,14 +14,37 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "TrustCode Partners",
-    "url": "https://www.trustcode.uz",
-    "logo": "https://www.trustcode.uz/icon-512.png",
-    "telephone": "+998913934469",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
-    "areaServed": "UZ",
-    "knowsLanguage": ["uz", "ru", "en"]
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.trustcode.uz/#org",
+        "name": "TrustCode Partners",
+        "alternateName": ["TrustCode", "TrustCode Partners Tashkent"],
+        "url": "https://www.trustcode.uz",
+        "logo": "https://www.trustcode.uz/icon-512.png",
+        "email": "info@trustcode.uz",
+        "telephone": "+998913934469",
+        "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
+        "areaServed": "UZ",
+        "knowsLanguage": ["uz", "ru", "en"],
+        "knowsAbout": ["Fintech software development", "Core banking systems", "CRM development", "Credit and microfinance systems", "BNPL platforms", "KYC/AML", "Java", "Spring Boot", "Angular", "Oracle PL/SQL"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+998913934469",
+          "email": "info@trustcode.uz",
+          "availableLanguage": ["uz", "ru", "en"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.trustcode.uz/#website",
+        "url": "https://www.trustcode.uz",
+        "name": "TrustCode Partners",
+        "inLanguage": ["uz", "ru", "en"],
+        "publisher": { "@id": "https://www.trustcode.uz/#org" }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

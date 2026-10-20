@@ -12,12 +12,20 @@
     "siteName": "TrustCode Partners",
     "tagline": "Надёжность банковского уровня — для вашего бизнеса",
     "titles": {
-      "home": "TrustCode Partners — Надёжность банковского уровня",
-      "services": "Услуги — TrustCode Partners",
-      "industries": "Отрасли — TrustCode Partners",
-      "portfolio": "Портфолио — TrustCode Partners",
-      "about": "О нас — TrustCode Partners",
-      "contact": "Контакты — TrustCode Partners"
+      "home": "Разработка финтех и CRM систем в Ташкенте — TrustCode",
+      "services": "Разработка программного обеспечения — TrustCode",
+      "industries": "IT-решения для банков, лизинга и ритейла — TrustCode",
+      "portfolio": "Портфолио и кейсы — TrustCode Partners",
+      "about": "О компании — разработчики с банковским опытом | TrustCode",
+      "contact": "Контакты и бесплатная консультация — TrustCode"
+    },
+    "descriptions": {
+      "home": "Команда разработчиков с опытом в банках: кредитные системы, рассрочка (BNPL), KYC, CRM/ERP. Аутсорсинг и аутстаффинг. Бесплатная консультация.",
+      "services": "Кредитные и микрофинансовые системы, платформы рассрочки, KYC/AML, fintech backend и CRM/ERP. Чёткие сроки и стоимость.",
+      "industries": "Программные решения для банков, МФО, лизинговых и страховых компаний, торговли и госсектора Узбекистана.",
+      "portfolio": "Кредитный скоринг, электронный документооборот, BNPL-платформы: реализованные проекты и их результаты.",
+      "about": "Backend, frontend, QA и DevOps специалисты с многолетним опытом в банковских и fintech системах. Ташкент.",
+      "contact": "Обсудим ваш проект: +998 91 393 44 69, info@trustcode.uz, Telegram. Готовы подписать NDA."
     }
   },
   "servicesItems": [
@@ -166,8 +174,8 @@
   "home": {
     "hero": {
       "eyebrow": "Финансы и Fintech · Ташкент",
-      "title": "Надёжность банковского уровня —",
-      "titleAccent": "для вашего бизнеса",
+      "title": "Разрабатываем финтех и банковские системы —",
+      "titleAccent": "с надёжностью банковского уровня",
       "subtitle": "Команда backend/frontend разработчиков с многолетним опытом в банковской и fintech сфере. Доставляем сложные финансовые системы надёжно, безопасно и в срок.",
       "ctaPrimary": "Получить консультацию",
       "ctaSecondary": "Смотреть работы",

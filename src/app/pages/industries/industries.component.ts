@@ -25,7 +25,7 @@ export class IndustriesComponent {
 
   constructor() {
     effect(() =>
-      this.seo.set(this.i18n.t('meta.titles.industries'), this.i18n.t('industriesPage.subtitle')),
+      this.seo.set(this.i18n.t('meta.titles.industries'), this.i18n.t('meta.descriptions.industries')),
     );
   }
 

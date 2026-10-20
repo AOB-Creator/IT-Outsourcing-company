@@ -46,7 +46,7 @@ export class ContactComponent {
   }
 
   constructor() {
-    effect(() => this.seo.set(this.i18n.t('meta.titles.contact'), this.i18n.t('contact.subtitle')));
+    effect(() => this.seo.set(this.i18n.t('meta.titles.contact'), this.i18n.t('meta.descriptions.contact')));
   }
 
   isInvalid(controlName: string): boolean {

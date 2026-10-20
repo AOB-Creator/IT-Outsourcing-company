@@ -23,7 +23,7 @@
       "home": "Tashkent-based team with banking experience: lending, BNPL, KYC and CRM/ERP systems. Outsourcing and team extension. Free consultation.",
       "services": "Lending and microfinance systems, BNPL platforms, KYC/AML, fintech backends and CRM/ERP. Clear timelines and pricing.",
       "industries": "Software solutions for banks, MFIs, leasing, insurance, retail and the public sector in Uzbekistan and Central Asia.",
-      "portfolio": "Credit scoring, e-contract and BNPL platform projects and their measurable results.",
+      "portfolio": "Projects and case studies we've delivered: fintech, warehouse management, legal documents, booking and public procurement.",
       "about": "Backend, frontend, QA and DevOps engineers with years of experience building banking and fintech systems. Tashkent.",
       "contact": "Let's discuss your project: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA-ready."
     }
@@ -164,6 +164,50 @@
       "tags": ["BNPL", "POS integration", "Analytics"]
     }
   ],
+  "projectsItems": [
+    {
+      "id": "adn-space",
+      "category": "Drone technology",
+      "name": "ADN-SPACE",
+      "description": "Real-time drone fleet control panel: flights and routes on a map, delivery times, battery levels and alerts.",
+      "tags": ["Real-time", "Maps", "Monitoring"]
+    },
+    {
+      "id": "tender-ai",
+      "category": "Public procurement · AI",
+      "name": "Alpha Vanguard Trade",
+      "description": "AI search for public tenders: finds matching lots from a plain-language query and calculates margin and deposit.",
+      "tags": ["AI search", "Scraping", "Analytics"]
+    },
+    {
+      "id": "budget-controller",
+      "category": "Personal finance",
+      "name": "Budget Controller",
+      "description": "Money management app: receipts via Telegram, all loans from the credit bureau report in one place, limits and forecasts. Sign-in with Telegram 2FA.",
+      "tags": ["Fintech", "Telegram bot", "2FA"]
+    },
+    {
+      "id": "navexa-wms",
+      "category": "Warehouse & logistics",
+      "name": "Navexa WMS",
+      "description": "Warehouse management system: robot and staff status, interactive warehouse map, workload and order analytics.",
+      "tags": ["WMS", "Dashboard", "Analytics"]
+    },
+    {
+      "id": "lexform",
+      "category": "Legal tech",
+      "name": "LexForm",
+      "description": "127 legal document templates: fill in a form and the document is laid out on an A4 page instantly, amounts in words, Cyrillic and Latin script.",
+      "tags": ["Document generation", "PDF / Word", "3 languages"]
+    },
+    {
+      "id": "escape-booking",
+      "category": "Travel · Booking",
+      "name": "Escape",
+      "description": "Hotel and resort booking platform from Tashkent to Chimgan, with a loyalty points program.",
+      "tags": ["Booking", "Loyalty", "Mobile-first"]
+    }
+  ],
   "teamRoles": [
     { "role": "Backend Developer", "count": "4" },
     { "role": "Frontend Developer", "count": "3" },
@@ -245,10 +289,17 @@
   },
   "portfolioPage": {
     "title": "Portfolio / Case Studies",
-    "subtitle": "Due to NDA terms, client names are described in general terms",
+    "subtitle": "Our products and client projects: fintech, logistics, legal tech, travel and public procurement.",
     "problemLabel": "Problem",
     "solutionLabel": "Solution",
-    "resultLabel": "Result"
+    "resultLabel": "Result",
+    "projectsEyebrow": "Products",
+    "projectsTitle": "Projects we've built",
+    "projectsSubtitle": "Live web applications built by our team. Open any of them and take a look.",
+    "openProject": "Open site",
+    "casesEyebrow": "NDA",
+    "casesTitle": "Client projects",
+    "casesSubtitle": "Client names are generalized due to non-disclosure agreements (NDA)"
   },
   "about": {
     "title": "About Us",

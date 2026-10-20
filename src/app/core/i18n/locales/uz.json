@@ -23,7 +23,7 @@
       "home": "Toshkentdagi dasturchilar jamoasi: kredit, nasiya (BNPL), KYC va CRM/ERP tizimlarini ishlab chiqamiz. Outsourcing va outstaff. Bepul konsultatsiya.",
       "services": "Kredit va mikromoliya tizimlari, nasiya platformalari, KYC/AML, fintech backend va CRM/ERP ishlab chiqish. Muddat va narxni aniq kelishamiz.",
       "industries": "Banklar, MMT, lizing, sug'urta, chakana savdo va davlat sektori uchun dasturiy yechimlar. Soha talablarini biladigan jamoa.",
-      "portfolio": "Kredit skoring, elektron shartnoma va BNPL platformalari bo'yicha amalga oshirilgan loyihalar va ularning natijalari.",
+      "portfolio": "Fintech, ombor boshqaruvi, yuridik hujjatlar, bron qilish va davlat xaridlari bo'yicha ishlab chiqilgan loyihalar va keyslar.",
       "about": "Bank va fintech tizimlarida yillar davomida ishlagan backend, frontend, QA va DevOps mutaxassislari jamoasi. Toshkent.",
       "contact": "Loyihangizni muhokama qilamiz: +998 91 393 44 69, info@trustcode.uz, Telegram. NDA imzolashga tayyormiz."
     }
@@ -164,6 +164,50 @@
       "tags": ["BNPL", "POS integratsiya", "Analitika"]
     }
   ],
+  "projectsItems": [
+    {
+      "id": "adn-space",
+      "category": "Dron texnologiyalari",
+      "name": "ADN-SPACE",
+      "description": "Dronlar parkini real vaqtda boshqarish paneli: xaritada parvozlar va marshrutlar, yetkazib berish vaqti, batareya holati va ogohlantirishlar.",
+      "tags": ["Real-time", "Xarita", "Monitoring"]
+    },
+    {
+      "id": "tender-ai",
+      "category": "Davlat xaridlari · AI",
+      "name": "Alpha Vanguard Trade",
+      "description": "Davlat xaridlari bo'yicha AI-qidiruv: oddiy tilda yozilgan so'rov bo'yicha mos tenderlarni topadi, marja va zakladni hisoblaydi.",
+      "tags": ["AI qidiruv", "Parsing", "Analitika"]
+    },
+    {
+      "id": "budget-controller",
+      "category": "Shaxsiy moliya",
+      "name": "Budget Controller",
+      "description": "Moliyani boshqarish ilovasi: kvitansiyalar Telegram orqali kiritiladi, KATM hisoboti asosida kreditlar bir joyda, limit va prognozlar. Kirish Telegram 2FA orqali.",
+      "tags": ["Fintech", "Telegram bot", "2FA"]
+    },
+    {
+      "id": "navexa-wms",
+      "category": "Ombor va logistika",
+      "name": "Navexa WMS",
+      "description": "Ombor boshqaruv tizimi: robotlar va xodimlar holati, interaktiv ombor xaritasi, yuklama va buyurtmalar analitikasi.",
+      "tags": ["WMS", "Dashboard", "Analitika"]
+    },
+    {
+      "id": "lexform",
+      "category": "Yuridik texnologiyalar",
+      "name": "LexForm",
+      "description": "127 ta yuridik hujjat shabloni: forma to'ldiriladi, hujjat A4 varaqda darhol shakllanadi, summalar so'z bilan yoziladi, kirill va lotin yozuvida.",
+      "tags": ["Hujjat generatsiyasi", "PDF / Word", "3 til"]
+    },
+    {
+      "id": "escape-booking",
+      "category": "Turizm · Bron qilish",
+      "name": "Escape",
+      "description": "Mehmonxona va dam olish joylarini bron qilish platformasi: Toshkentdan Chimyongacha, bonus ballar tizimi bilan.",
+      "tags": ["Booking", "Loyalty", "Mobile-first"]
+    }
+  ],
   "teamRoles": [
     { "role": "Backend dasturchi", "count": "4" },
     { "role": "Frontend dasturchi", "count": "3" },
@@ -245,10 +289,17 @@
   },
   "portfolioPage": {
     "title": "Portfolio / Case'lar",
-    "subtitle": "Maxfiylik shartlari (NDA) sabab mijozlar nomlari umumiy tavsif bilan ko'rsatilgan",
+    "subtitle": "Ishlab chiqilgan mahsulotlarimiz va mijozlar uchun bajarilgan loyihalar: fintech, logistika, legaltech, turizm va davlat xaridlari.",
     "problemLabel": "Muammo",
     "solutionLabel": "Yechim",
-    "resultLabel": "Natija"
+    "resultLabel": "Natija",
+    "projectsEyebrow": "Mahsulotlar",
+    "projectsTitle": "Ishlab chiqilgan loyihalar",
+    "projectsSubtitle": "Jamoamiz tomonidan yaratilgan va ishlab turgan veb-ilovalar. Har birini ochib ko'rishingiz mumkin.",
+    "openProject": "Saytni ochish",
+    "casesEyebrow": "NDA",
+    "casesTitle": "Mijozlar uchun loyihalar",
+    "casesSubtitle": "Maxfiylik shartlari (NDA) sabab mijozlar nomlari umumiy tavsif bilan ko'rsatilgan"
   },
   "about": {
     "title": "Biz haqimizda",

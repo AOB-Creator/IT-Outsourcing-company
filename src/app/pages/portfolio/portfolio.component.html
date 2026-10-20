@@ -8,6 +8,45 @@
 
 <section class="section">
   <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ i18n.t('portfolioPage.projectsEyebrow') }}</span>
+      <h2>{{ i18n.t('portfolioPage.projectsTitle') }}</h2>
+      <p class="lead">{{ i18n.t('portfolioPage.projectsSubtitle') }}</p>
+    </div>
+
+    <div class="projects">
+      @for (p of projects; track p.id) {
+        <article class="card project">
+          <a class="project__shot" [href]="p.url" target="_blank" rel="noopener" [attr.aria-label]="p.name + ' — ' + i18n.t('portfolioPage.openProject')">
+            <img [src]="p.image" [alt]="p.name" width="960" height="600" loading="lazy" decoding="async">
+          </a>
+          <div class="project__body">
+            <span class="meta">{{ p.category }}</span>
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.description }}</p>
+            <ul class="pill-list">
+              @for (tag of p.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+            <a class="btn btn--ghost project__link" [href]="p.url" target="_blank" rel="noopener">
+              {{ i18n.t('portfolioPage.openProject') }} <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ i18n.t('portfolioPage.casesEyebrow') }}</span>
+      <h2>{{ i18n.t('portfolioPage.casesTitle') }}</h2>
+      <p class="lead">{{ i18n.t('portfolioPage.casesSubtitle') }}</p>
+    </div>
+
     <div class="cases">
       @for (item of items; track item.industry) {
         <article class="card case">

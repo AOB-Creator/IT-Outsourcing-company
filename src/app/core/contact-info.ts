@@ -4,4 +4,5 @@ export const CONTACT = {
   phoneHref: 'tel:+998913934469',
   telegramUrl: 'https://t.me/+998913934469',
   email: 'info@trustcode.uz',
+  linkedinUrl: 'https://www.linkedin.com/company/145236310/',
 } as const;

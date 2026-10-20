@@ -206,6 +206,13 @@
       "name": "Escape",
       "description": "Mehmonxona va dam olish joylarini bron qilish platformasi: Toshkentdan Chimyongacha, bonus ballar tizimi bilan.",
       "tags": ["Booking", "Loyalty", "Mobile-first"]
+    },
+    {
+      "id": "carzone",
+      "category": "Avtomobil savdosi va ijarasi",
+      "name": "CARZONE",
+      "description": "Premium avtomobillar savdosi va ijarasi platformasi: filtrli katalog, kredit kalkulyatori, test-drayv broni va avtopark uchun admin dashboard.",
+      "tags": ["Marketplace", "Admin dashboard", "Angular"]
     }
   ],
   "teamRoles": [

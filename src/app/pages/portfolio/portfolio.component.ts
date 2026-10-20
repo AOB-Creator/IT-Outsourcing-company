@@ -24,6 +24,7 @@ const PROJECT_LINKS: Record<string, string> = {
   'navexa-wms': 'https://warehouse-management-system-delta-seven.vercel.app',
   lexform: 'https://lex-form.vercel.app',
   'escape-booking': 'https://escape-booking-omega.vercel.app',
+  carzone: 'https://car-marketplace-kohl-nine.vercel.app',
 };
 
 interface PortfolioItem {

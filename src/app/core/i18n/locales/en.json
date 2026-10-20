@@ -206,6 +206,13 @@
       "name": "Escape",
       "description": "Hotel and resort booking platform from Tashkent to Chimgan, with a loyalty points program.",
       "tags": ["Booking", "Loyalty", "Mobile-first"]
+    },
+    {
+      "id": "carzone",
+      "category": "Car sales & rental",
+      "name": "CARZONE",
+      "description": "Premium car sales and rental platform: a filterable catalog, loan calculator, test-drive booking and an admin dashboard for the fleet.",
+      "tags": ["Marketplace", "Admin dashboard", "Angular"]
     }
   ],
   "teamRoles": [

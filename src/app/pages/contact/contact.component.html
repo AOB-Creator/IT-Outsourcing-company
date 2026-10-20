@@ -34,6 +34,10 @@
             <app-icon name="telegram" [size]="18" /> {{ i18n.t('contact.info.telegram') }}
           </a>
 
+          <a class="contact-info__review" [href]="info.googleReviewUrl" target="_blank" rel="noopener">
+            <app-icon name="star" [size]="16" /> {{ i18n.t('contact.info.review') }} <span aria-hidden="true">↗</span>
+          </a>
+
           <p class="contact-info__response">
             <span class="dot"></span> {{ i18n.t('contact.info.responseTime') }}
           </p>

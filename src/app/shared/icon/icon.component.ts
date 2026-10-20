@@ -4,7 +4,7 @@ import { NgSwitch, NgSwitchCase } from '@angular/common';
 export type IconName =
   | 'layers' | 'cart' | 'shield' | 'check' | 'users' | 'lock' | 'sprint'
   | 'telegram' | 'phone' | 'mail' | 'arrow-right' | 'menu' | 'close'
-  | 'chevron-down' | 'clock' | 'award' | 'globe' | 'linkedin';
+  | 'chevron-down' | 'clock' | 'award' | 'globe' | 'linkedin' | 'star';
 
 @Component({
   selector: 'app-icon',
@@ -105,6 +105,10 @@ export type IconName =
         <ng-container *ngSwitchCase="'clock'">
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M12 7v5l3.5 2"></path>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'star'">
+          <path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8L12 3Z"></path>
         </ng-container>
 
         <ng-container *ngSwitchCase="'award'">
